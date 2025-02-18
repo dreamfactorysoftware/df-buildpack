@@ -1,12 +1,29 @@
 #!/bin/sh
 set -e
 
+echo "-----> Running DreamFactory Buildpack"
+
+# Check if BUILD_DIR is defined
+if [ -z "$BUILD_DIR" ]; then
+    echo "X ERROR: BUILD_DIR is not set!"
+    exit 1
+fi
+
 echo "-----> Cloning DreamFactory source code"
-git clone -b develop https://github.com/dreamfactorysoftware/dreamfactory.git $BUILD_DIR
+git clone -b develop https://github.com/dreamfactorysoftware/dreamfactory.git $BUILD_DIR/dreamfactory
+
+echo "-----> Listing contents of $BUILD_DIR/dreamfactory"
+ls -la $BUILD_DIR/dreamfactory
 
 echo "-----> Checking if database/seeds exists"
 ls -la $BUILD_DIR/database
 ls -la $BUILD_DIR/database/seeds || echo "X database/seeds/ is missing!"
+
+echo "-----> Moving DreamFactory into the Build Directory"
+mv $BUILD_DIR/dreamfactory/* $BUILD_DIR
+
+echo "-----> Final directory structure:"
+ls -la $BUILD_DIR
 
 cd $BUILD_DIR
 
