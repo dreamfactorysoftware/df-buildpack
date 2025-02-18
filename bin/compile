@@ -6,8 +6,11 @@ git clone -b develop https://github.com/dreamfactorysoftware/dreamfactory.git $B
 
 cd $BUILD_DIR
 
-echo "-----> Installing dependencies"
-composer install --no-dev --optimize-autoloader
+echo "-----> Installing Composer"
+curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+echo "-----> Running Composer Install"
+composer install --no-dev --ignore-platform-reqs --optimize-autoloader
 
 echo "-----> Running database migrations"
 php artisan migrate --force
