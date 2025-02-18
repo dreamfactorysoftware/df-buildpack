@@ -4,6 +4,10 @@ set -e
 echo "-----> Cloning DreamFactory source code"
 git clone -b develop https://github.com/dreamfactorysoftware/dreamfactory.git $BUILD_DIR
 
+echo "-----> Checking if database/seeds exists"
+ls -la $BUILD_DIR/database
+ls -la $BUILD_DIR/database/seeds || echo "X database/seeds/ is missing!"
+
 cd $BUILD_DIR
 
 echo "-----> Installing Composer"
