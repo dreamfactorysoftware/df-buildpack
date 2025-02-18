@@ -1,0 +1,9 @@
+#!/bin/sh
+cat <<EOL
+{
+  "default_process_types": {
+    "web": "nginx -c \$HOME/nginx/nginx.conf && php-fpm -y \$HOME/php-fpm/php-fpm.conf"
+  }
+}
+EOL
+

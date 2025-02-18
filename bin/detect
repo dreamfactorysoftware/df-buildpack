@@ -1,0 +1,9 @@
+#!/bin/sh
+# Detects if this is a DreamFactory project
+if [ -f "composer.json" ] && grep -q '"dreamfactory"' composer.json; then
+  echo "DreamFactory"
+  exit 0
+else
+  exit 1
+fi
+
