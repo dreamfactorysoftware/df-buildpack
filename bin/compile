@@ -2,7 +2,7 @@
 set -e
 
 echo "-----> Cloning DreamFactory source code"
-git clone https://github.com/dreamfactorysoftware/dreamfactory.git $BUILD_DIR
+git clone -b develop https://github.com/dreamfactorysoftware/dreamfactory.git $BUILD_DIR
 
 cd $BUILD_DIR
 
