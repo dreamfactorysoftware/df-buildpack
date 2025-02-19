@@ -9,9 +9,18 @@ if [ -z "$BUILD_DIR" ]; then
     exit 1
 fi
 
+# Install Git if missing
+if ! command -v git >/dev/null 2>&1; then
+    echo "X Git is missing! Installing now..."
+    apt-get update && apt-get install -y git
+    echo "Git installed!"
+else
+    echo "Git is already installed"
+fi
+
 echo "-----> Cloning DreamFactory source code"
-# git clone -b develop https://github.com/dreamfactorysoftware/dreamfactory.git $BUILD_DIR/dreamfactory
-git clone https://github.com/dreamfactorysoftware/dreamfactory.git $BUILD_DIR/dreamfactory
+git clone -b develop https://github.com/dreamfactorysoftware/dreamfactory.git $BUILD_DIR/dreamfactory
+#git clone https://github.com/dreamfactorysoftware/dreamfactory.git $BUILD_DIR/dreamfactory
 
 echo "-----> Listing contents of $BUILD_DIR/dreamfactory"
 ls -la $BUILD_DIR/dreamfactory
