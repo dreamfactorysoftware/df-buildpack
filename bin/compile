@@ -20,20 +20,7 @@ fi
 
 echo "-----> Using BUILD_DIR: $BUILD_DIR"
 
-# Install system dependencies
-echo "-----> Installing system dependencies"
-apt-get update
-apt-get install -y git php php-cli php-curl php-mbstring php-xml unzip
-
-# Install Git if missing
-if ! command -v git >/dev/null 2>&1; then
-    echo "X Git is missing! Installing now..."
-    apt-get update && apt-get install -y git
-    echo "Git installed!"
-else
-    echo "Git is already installed"
-fi
-
+# Git should already be available in Heroku
 echo "-----> Current directory structure before clone:"
 pwd
 ls -la
@@ -52,42 +39,6 @@ ls -la $BUILD_DIR
 echo "-----> Checking database directory:"
 ls -la $BUILD_DIR/database || echo "X ERROR: Database directory not found!"
 
-echo "-----> Installing Composer"
-curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-echo "-----> Modifying composer.json for Heroku compatibility"
-cd $BUILD_DIR
-
-# Create a temporary file with jq modifications
-cat > modify_composer.php <<'EOF'
-<?php
-$composerJson = json_decode(file_get_contents('composer.json'), true);
-
-// Remove problematic packages
-unset($composerJson['require']['dreamfactory/df-hadoop']);
-unset($composerJson['require']['yajra/laravel-oci8']);
-unset($composerJson['require']['yajra/laravel-pdo-via-oci8']);
-
-// Add platform overrides
-if (!isset($composerJson['config']['platform'])) {
-    $composerJson['config']['platform'] = [];
-}
-$composerJson['config']['platform']['ext-odbc'] = false;
-$composerJson['config']['platform']['ext-oci8'] = false;
-
-file_put_contents('composer.json', json_encode($composerJson, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
-EOF
-
-# Run the PHP script to modify composer.json
-php modify_composer.php
-
-echo "-----> Running Composer Install"
-composer install --no-dev --ignore-platform-reqs --optimize-autoloader
-
-echo "-----> Running database migrations"
-php artisan migrate --force
-
-echo "-----> Setting up Nginx and PHP-FPM"
-mkdir -p $BUILD_DIR/nginx
-mkdir -p $BUILD_DIR/php-fpm
+# Let the PHP buildpack handle composer installation and PHP setup
+echo "-----> DreamFactory buildpack complete. Handing off to PHP buildpack..."
 
