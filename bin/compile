@@ -20,7 +20,6 @@ fi
 
 echo "-----> Using BUILD_DIR: $BUILD_DIR"
 
-# Git should already be available in Heroku
 echo "-----> Current directory structure before clone:"
 pwd
 ls -la
@@ -34,11 +33,42 @@ echo "-----> Moving DreamFactory into the Build Directory"
 cp -R $BUILD_DIR/dreamfactory/. $BUILD_DIR/
 rm -rf $BUILD_DIR/dreamfactory
 
-echo "-----> Checking final directory structure:"
-ls -la $BUILD_DIR
-echo "-----> Checking database directory:"
-ls -la $BUILD_DIR/database || echo "X ERROR: Database directory not found!"
+# Create required directories
+echo "-----> Creating required directories"
+mkdir -p $BUILD_DIR/database/seeds
+mkdir -p $BUILD_DIR/database/factories
+mkdir -p $BUILD_DIR/storage/logs
+mkdir -p $BUILD_DIR/storage/app/public
+mkdir -p $BUILD_DIR/storage/framework/{cache,sessions,views}
+chmod -R 775 $BUILD_DIR/storage
 
-# Let the PHP buildpack handle composer installation and PHP setup
+# Create .env file
+echo "-----> Generating .env file"
+cd $BUILD_DIR
+php -r "copy('.env.example', '.env');"
+
+# Let PHP buildpack handle composer installation
+echo "-----> Waiting for Composer installation from PHP buildpack..."
+
+# Create a profile.d script that will run after all buildpacks
+mkdir -p $BUILD_DIR/.profile.d
+cat > $BUILD_DIR/.profile.d/dreamfactory.sh <<'EOF'
+#!/bin/sh
+
+# Generate application key
+php artisan key:generate --force
+
+# Run DreamFactory environment setup
+php artisan df:env --db_connection=sqlite --df_install=Cloud
+
+# Run storage link
+php artisan storage:link
+
+# Run migrations
+php artisan migrate --force
+EOF
+
+chmod +x $BUILD_DIR/.profile.d/dreamfactory.sh
+
 echo "-----> DreamFactory buildpack complete. Handing off to PHP buildpack..."
 
