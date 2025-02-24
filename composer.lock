@@ -4,8 +4,78 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2f96040798f9c970754453a9f44722a",
+    "content-hash": "64b8b15ca099757001d19bb93912d39a",
     "packages": [
+        {
+            "name": "apple/apn-push",
+            "version": "v3.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ZhukV/AppleApnPush.git",
+                "reference": "9feb0f42d53bbcf33d002486f0969f3752c573cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ZhukV/AppleApnPush/zipball/9feb0f42d53bbcf33d002486f0969f3752c573cb",
+                "reference": "9feb0f42d53bbcf33d002486f0969f3752c573cb",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": "^7.1 | ^8.0"
+            },
+            "require-dev": {
+                "escapestudios/symfony2-coding-standard": "~3.0",
+                "phpmetrics/phpmetrics": "^2.0",
+                "phpunit/phpunit": "^8.0 | ^9.0",
+                "psr/simple-cache": "~1.0",
+                "web-token/jwt-key-mgmt": "~2.0",
+                "web-token/jwt-signature": "~2.0",
+                "web-token/jwt-signature-algorithm-ecdsa": "~2.0"
+            },
+            "suggest": {
+                "spomky-labs/jose": "Allow using JSON Web Token for authenticating in Provider (do not work with PHP 7.2).",
+                "web-token/jwt-key-mgmt": "Allow using JSON Web Token for authenticating in Provider.",
+                "web-token/jwt-signature": "Allow using JSON Web Token for authenticating in Provider.",
+                "web-token/jwt-signature-algorithm-ecdsa": "Allow using JSON Web Token for authenticating in Provider."
+            },
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/ZhukV/AppleApnPush",
+                    "name": "apple/apn-push"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Apple\\ApnPush\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitaliy Zhuk",
+                    "email": "zhuk2205@gmail.com"
+                }
+            ],
+            "description": "Push notifications to Apple devices",
+            "homepage": "https://github.com/ZhukV/AppleApnPush",
+            "keywords": [
+                "apn",
+                "apple",
+                "notifications",
+                "push"
+            ],
+            "support": {
+                "issues": "https://github.com/ZhukV/AppleApnPush/issues",
+                "source": "https://github.com/ZhukV/AppleApnPush/tree/v3.1.7"
+            },
+            "time": "2023-10-27T05:33:08+00:00"
+        },
         {
             "name": "aws/aws-crt-php",
             "version": "v1.2.7",
@@ -62,16 +132,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.339.12",
+            "version": "3.337.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "a63e79c15a972c54bf015a16cce3f3572e0c8221"
+                "reference": "06dfc8f76423b49aaa181debd25bbdc724c346d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a63e79c15a972c54bf015a16cce3f3572e0c8221",
-                "reference": "a63e79c15a972c54bf015a16cce3f3572e0c8221",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/06dfc8f76423b49aaa181debd25bbdc724c346d6",
+                "reference": "06dfc8f76423b49aaa181debd25bbdc724c346d6",
                 "shasum": ""
             },
             "require": {
@@ -79,30 +149,31 @@
                 "ext-json": "*",
                 "ext-pcre": "*",
                 "ext-simplexml": "*",
-                "guzzlehttp/guzzle": "^7.4.5",
-                "guzzlehttp/promises": "^2.0",
-                "guzzlehttp/psr7": "^2.4.5",
-                "mtdowling/jmespath.php": "^2.8.0",
-                "php": ">=8.1",
-                "psr/http-message": "^2.0"
+                "guzzlehttp/guzzle": "^6.5.8 || ^7.4.5",
+                "guzzlehttp/promises": "^1.4.0 || ^2.0",
+                "guzzlehttp/psr7": "^1.9.1 || ^2.4.5",
+                "mtdowling/jmespath.php": "^2.6",
+                "php": ">=7.2.5",
+                "psr/http-message": "^1.0 || ^2.0"
             },
             "require-dev": {
                 "andrewsville/php-token-reflection": "^1.4",
                 "aws/aws-php-sns-message-validator": "~1.0",
                 "behat/behat": "~3.0",
-                "composer/composer": "^2.7.8",
+                "composer/composer": "^1.10.22",
                 "dms/phpunit-arraysubset-asserts": "^0.4.0",
                 "doctrine/cache": "~1.4",
                 "ext-dom": "*",
                 "ext-openssl": "*",
                 "ext-pcntl": "*",
                 "ext-sockets": "*",
+                "nette/neon": "^2.3",
+                "paragonie/random_compat": ">= 2",
                 "phpunit/phpunit": "^5.6.3 || ^8.5 || ^9.5",
-                "psr/cache": "^2.0 || ^3.0",
-                "psr/simple-cache": "^2.0 || ^3.0",
-                "sebastian/comparator": "^1.2.3 || ^4.0 || ^5.0",
-                "symfony/filesystem": "^v6.4.0 || ^v7.1.0",
-                "yoast/phpunit-polyfills": "^2.0"
+                "psr/cache": "^1.0 || ^2.0 || ^3.0",
+                "psr/simple-cache": "^1.0 || ^2.0 || ^3.0",
+                "sebastian/comparator": "^1.2.3 || ^4.0",
+                "yoast/phpunit-polyfills": "^1.0"
             },
             "suggest": {
                 "aws/aws-php-sns-message-validator": "To validate incoming SNS notifications",
@@ -151,11 +222,11 @@
                 "sdk"
             ],
             "support": {
-                "forum": "https://github.com/aws/aws-sdk-php/discussions",
+                "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.339.12"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.337.3"
             },
-            "time": "2025-02-12T19:08:43+00:00"
+            "time": "2025-01-21T19:10:05+00:00"
         },
         {
             "name": "bitbucket/client",
@@ -1144,17 +1215,80 @@
             "time": "2017-07-05T19:53:15+00:00"
         },
         {
-            "name": "dreamfactory/df-admin-interface",
-            "version": "dev-develop",
+            "name": "dreamfactory/df-adldap",
+            "version": "0.18.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dreamfactorysoftware/df-admin-interface.git",
-                "reference": "1b7ec44d8913c412ffef1b7249210089de2ea64d"
+                "url": "https://github.com/dreamfactorysoftware/df-adldap.git",
+                "reference": "4076a06df3db21cb80190c2339cf64a8c889925d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dreamfactorysoftware/df-admin-interface/zipball/1b7ec44d8913c412ffef1b7249210089de2ea64d",
-                "reference": "1b7ec44d8913c412ffef1b7249210089de2ea64d",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-adldap/zipball/4076a06df3db21cb80190c2339cf64a8c889925d",
+                "reference": "4076a06df3db21cb80190c2339cf64a8c889925d",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-core": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.14.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\ADLdap\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\ADLdap\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Arif Islam",
+                    "email": "arifislam@dreamfactory.com"
+                },
+                {
+                    "name": "Lee Hicks",
+                    "email": "leehicks@dreamfactory.com"
+                }
+            ],
+            "description": "Active Directory & LDAP support for DreamFactory Platform 2.0",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "ad",
+                "api",
+                "dreamfactory",
+                "ldap",
+                "rest"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-adldap",
+                "issues": "https://github.com/dreamfactorysoftware/df-adldap/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-02-27T14:21:46+00:00"
+        },
+        {
+            "name": "dreamfactory/df-admin-interface",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-admin-interface.git",
+                "reference": "d06aec42e30a8d86ee6442a88d31adae9a89d32a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-admin-interface/zipball/d06aec42e30a8d86ee6442a88d31adae9a89d32a",
+                "reference": "d06aec42e30a8d86ee6442a88d31adae9a89d32a",
                 "shasum": ""
             },
             "require": {
@@ -1192,7 +1326,7 @@
                 "email": "dspsupport@dreamfactory.com",
                 "wiki": "https://wiki.dreamfactory.com"
             },
-            "time": "2025-02-12T16:43:49+00:00"
+            "time": "2025-02-19T06:11:26+00:00"
         },
         {
             "name": "dreamfactory/df-amqp",
@@ -1324,21 +1458,21 @@
         },
         {
             "name": "dreamfactory/df-aws",
-            "version": "dev-develop",
+            "version": "0.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dreamfactorysoftware/df-aws.git",
-                "reference": "eed6a49eff565aed7a788818f259385e7e1784fb"
+                "reference": "62f496c5ee0e392c644d8c58313a49512c5386d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dreamfactorysoftware/df-aws/zipball/eed6a49eff565aed7a788818f259385e7e1784fb",
-                "reference": "eed6a49eff565aed7a788818f259385e7e1784fb",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-aws/zipball/62f496c5ee0e392c644d8c58313a49512c5386d0",
+                "reference": "62f496c5ee0e392c644d8c58313a49512c5386d0",
                 "shasum": ""
             },
             "require": {
                 "aws/aws-sdk-php": "3.*",
-                "dreamfactory/df-database": "dev-develop as 1.3.0",
+                "dreamfactory/df-database": "~1.3.0",
                 "dreamfactory/df-email": "~0.10",
                 "dreamfactory/df-file": "~0.8",
                 "dreamfactory/df-sqldb": "~1.0",
@@ -1391,25 +1525,25 @@
                 "source": "https://github.com/dreamfactorysoftware/df-aws",
                 "wiki": "https://wiki.dreamfactory.com"
             },
-            "time": "2025-02-13T15:14:44+00:00"
+            "time": "2025-02-19T06:11:54+00:00"
         },
         {
             "name": "dreamfactory/df-azure",
-            "version": "dev-develop",
+            "version": "0.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dreamfactorysoftware/df-azure.git",
-                "reference": "9057d151c8f393294777dbf2d89bdd1b7e831f4c"
+                "reference": "6fe3bc6264edd4654bc6604cd3f972c919eade25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dreamfactorysoftware/df-azure/zipball/9057d151c8f393294777dbf2d89bdd1b7e831f4c",
-                "reference": "9057d151c8f393294777dbf2d89bdd1b7e831f4c",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-azure/zipball/6fe3bc6264edd4654bc6604cd3f972c919eade25",
+                "reference": "6fe3bc6264edd4654bc6604cd3f972c919eade25",
                 "shasum": ""
             },
             "require": {
                 "dreamfactory/azure-documentdb-php-sdk": "~0.2.0",
-                "dreamfactory/df-database": "dev-develop as 1.3.0",
+                "dreamfactory/df-database": "~1.3.0",
                 "dreamfactory/df-file": "~0.8",
                 "microsoft/azure-storage-blob": "~1.5.4",
                 "microsoft/azure-storage-common": "~1.5.2",
@@ -1461,7 +1595,135 @@
                 "source": "https://github.com/dreamfactorysoftware/df-azure",
                 "wiki": "https://wiki.dreamfactory.com"
             },
-            "time": "2025-02-13T15:18:14+00:00"
+            "time": "2025-02-19T06:12:58+00:00"
+        },
+        {
+            "name": "dreamfactory/df-azure-ad",
+            "version": "0.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-azure-ad.git",
+                "reference": "4bdc7c7232df9f80bbe7ca06347377a8e17634fc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-azure-ad/zipball/4bdc7c7232df9f80bbe7ca06347377a8e17634fc",
+                "reference": "4bdc7c7232df9f80bbe7ca06347377a8e17634fc",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-oauth": "~0.16"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.8.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\AzureAD\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\AzureAD\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Arif Islam",
+                    "email": "arifislam@dreamfactory.com"
+                },
+                {
+                    "name": "Lee Hicks",
+                    "email": "leehicks@dreamfactory.com"
+                }
+            ],
+            "description": "Azure Active Directory support for DreamFactory Platform 2.0",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "active",
+                "ad",
+                "api",
+                "azure",
+                "directory",
+                "dreamfactory",
+                "rest"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-azure-ad",
+                "issues": "https://github.com/dreamfactorysoftware/df-azure-ad/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-02-27T14:27:48+00:00"
+        },
+        {
+            "name": "dreamfactory/df-bigquery",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-bigquery.git",
+                "reference": "cdb2fd23f00408d43b9dcf080d5b1a56b8dab4f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-bigquery/zipball/cdb2fd23f00408d43b9dcf080d5b1a56b8dab4f7",
+                "reference": "cdb2fd23f00408d43b9dcf080d5b1a56b8dab4f7",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-core": "~1.0",
+                "dreamfactory/df-sqldb": "~1.0",
+                "google/cloud-bigquery": "~1.23"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "@stable"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\BigQuery\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\BigQuery\\": "src/"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Yaroslav Mokhurenko",
+                    "email": "yaroslavmo@softwareplanetgroup.com"
+                }
+            ],
+            "description": "DreamFactory(tm) BigQuery Service",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "BigQuery",
+                "Google",
+                "connector",
+                "dreamfactory"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-bigquery",
+                "issues": "https://github.com/dreamfactorysoftware/df-bigquery/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-02-27T15:22:28+00:00"
         },
         {
             "name": "dreamfactory/df-cache",
@@ -1532,20 +1794,20 @@
         },
         {
             "name": "dreamfactory/df-cassandra",
-            "version": "dev-develop",
+            "version": "0.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dreamfactorysoftware/df-cassandra.git",
-                "reference": "a045ac06dcadd41e3d75211ef2c3da376cd9e7e5"
+                "reference": "5ab5201636284eaa6476011bb3e6a72a232b70bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dreamfactorysoftware/df-cassandra/zipball/a045ac06dcadd41e3d75211ef2c3da376cd9e7e5",
-                "reference": "a045ac06dcadd41e3d75211ef2c3da376cd9e7e5",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-cassandra/zipball/5ab5201636284eaa6476011bb3e6a72a232b70bc",
+                "reference": "5ab5201636284eaa6476011bb3e6a72a232b70bc",
                 "shasum": ""
             },
             "require": {
-                "dreamfactory/df-database": "dev-develop as 1.3.0"
+                "dreamfactory/df-database": "~1.3.0"
             },
             "type": "library",
             "extra": {
@@ -1593,20 +1855,75 @@
                 "source": "https://github.com/dreamfactorysoftware/df-cassandra",
                 "wiki": "https://wiki.dreamfactory.com"
             },
-            "time": "2025-02-13T15:19:53+00:00"
+            "time": "2025-02-19T06:13:21+00:00"
         },
         {
-            "name": "dreamfactory/df-core",
-            "version": "dev-develop",
+            "name": "dreamfactory/df-compliance",
+            "version": "0.5.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dreamfactorysoftware/df-core.git",
-                "reference": "63c7be39b2ffd5b7679d5f216d9c967de84816c8"
+                "url": "https://github.com/dreamfactorysoftware/df-compliance.git",
+                "reference": "34e045d9cff951e60925dc4c307151deb5f56d0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dreamfactorysoftware/df-core/zipball/63c7be39b2ffd5b7679d5f216d9c967de84816c8",
-                "reference": "63c7be39b2ffd5b7679d5f216d9c967de84816c8",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-compliance/zipball/34e045d9cff951e60925dc4c307151deb5f56d0d",
+                "reference": "34e045d9cff951e60925dc4c307151deb5f56d0d",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-core": "~1.0",
+                "dreamfactory/df-system": "~0.5",
+                "php": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\Compliance\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\Compliance\\": "src/"
+                }
+            },
+            "license": [
+                "Proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "DreamFactory Team",
+                    "email": "code@dreamfactory.com"
+                }
+            ],
+            "description": "Data compliance configuration package for DreamFactory.",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "compliance",
+                "dreamfactory"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-compliance",
+                "issues": "https://github.com/dreamfactorysoftware/df-compliance/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-11-12T23:54:06+00:00"
+        },
+        {
+            "name": "dreamfactory/df-core",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-core.git",
+                "reference": "7b8c0901224b098642b206c3448ff03aefafbbc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-core/zipball/7b8c0901224b098642b206c3448ff03aefafbbc2",
+                "reference": "7b8c0901224b098642b206c3448ff03aefafbbc2",
                 "shasum": ""
             },
             "require": {
@@ -1672,24 +1989,24 @@
                 "source": "https://github.com/dreamfactorysoftware/df-core",
                 "wiki": "https://wiki.dreamfactory.com"
             },
-            "time": "2025-02-11T21:24:02+00:00"
+            "time": "2025-02-19T06:13:51+00:00"
         },
         {
             "name": "dreamfactory/df-couchdb",
-            "version": "dev-develop",
+            "version": "0.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dreamfactorysoftware/df-couchdb.git",
-                "reference": "a69307d2f1959c700e1241ade647b0ec864696ba"
+                "reference": "7c1ccf9d057ae380004dce4d9f9bff10ae99d8bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dreamfactorysoftware/df-couchdb/zipball/a69307d2f1959c700e1241ade647b0ec864696ba",
-                "reference": "a69307d2f1959c700e1241ade647b0ec864696ba",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-couchdb/zipball/7c1ccf9d057ae380004dce4d9f9bff10ae99d8bf",
+                "reference": "7c1ccf9d057ae380004dce4d9f9bff10ae99d8bf",
                 "shasum": ""
             },
             "require": {
-                "dreamfactory/df-database": "dev-develop as 1.3.0",
+                "dreamfactory/df-database": "~1.3.0",
                 "php-on-couch/php-on-couch": "^4.0"
             },
             "type": "library",
@@ -1739,24 +2056,24 @@
                 "source": "https://github.com/dreamfactorysoftware/df-couchdb",
                 "wiki": "https://wiki.dreamfactory.com"
             },
-            "time": "2025-02-13T15:21:52+00:00"
+            "time": "2025-02-19T06:14:09+00:00"
         },
         {
             "name": "dreamfactory/df-database",
-            "version": "dev-develop",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dreamfactorysoftware/df-database.git",
-                "reference": "8b2d2f355f3223270379ab856a393f144405843d"
+                "reference": "4c73e980fb0399110777d60b7e3f4adbba4b97ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dreamfactorysoftware/df-database/zipball/8b2d2f355f3223270379ab856a393f144405843d",
-                "reference": "8b2d2f355f3223270379ab856a393f144405843d",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-database/zipball/4c73e980fb0399110777d60b7e3f4adbba4b97ee",
+                "reference": "4c73e980fb0399110777d60b7e3f4adbba4b97ee",
                 "shasum": ""
             },
             "require": {
-                "dreamfactory/df-core": "dev-develop as 1.0.4"
+                "dreamfactory/df-core": "~1.0.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "@stable"
@@ -1806,24 +2123,24 @@
                 "source": "https://github.com/dreamfactorysoftware/df-database",
                 "wiki": "https://wiki.dreamfactory.com"
             },
-            "time": "2025-02-13T15:07:58+00:00"
+            "time": "2025-02-19T06:14:33+00:00"
         },
         {
             "name": "dreamfactory/df-email",
-            "version": "dev-develop",
+            "version": "0.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dreamfactorysoftware/df-email.git",
-                "reference": "fd251d1a29ddf3beaafd2a3882c1d70fa5796f07"
+                "reference": "622511b012b1060ce2908b8a0d767e9856a76de9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dreamfactorysoftware/df-email/zipball/fd251d1a29ddf3beaafd2a3882c1d70fa5796f07",
-                "reference": "fd251d1a29ddf3beaafd2a3882c1d70fa5796f07",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-email/zipball/622511b012b1060ce2908b8a0d767e9856a76de9",
+                "reference": "622511b012b1060ce2908b8a0d767e9856a76de9",
                 "shasum": ""
             },
             "require": {
-                "dreamfactory/df-core": "dev-develop as 1.0.4",
+                "dreamfactory/df-core": "~1.0.4",
                 "guzzlehttp/guzzle": "~7.2",
                 "symfony/http-client": "^6.4",
                 "symfony/mailer": "^7.2",
@@ -1877,7 +2194,69 @@
                 "source": "https://github.com/dreamfactorysoftware/df-email",
                 "wiki": "https://wiki.dreamfactory.com"
             },
-            "time": "2025-02-13T15:25:27+00:00"
+            "time": "2025-02-19T06:14:54+00:00"
+        },
+        {
+            "name": "dreamfactory/df-excel",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-excel.git",
+                "reference": "e42bb3ce3e30f17401d1a0ad90d4cafb8f5d210f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-excel/zipball/e42bb3ce3e30f17401d1a0ad90d4cafb8f5d210f",
+                "reference": "e42bb3ce3e30f17401d1a0ad90d4cafb8f5d210f",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-core": "~1.0",
+                "dreamfactory/df-system": "~0.5",
+                "phpoffice/phpspreadsheet": "~1.25.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "@stable"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\Excel\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\Excel\\": "src/"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Yaroslav Mokhurenko",
+                    "email": "yaroslavm@softwareplanet.com"
+                }
+            ],
+            "description": "DreamFactory(tm) Excel Code",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "Excel",
+                "connector",
+                "dreamfactory"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-excel",
+                "issues": "https://github.com/dreamfactorysoftware/df-excel/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-02-28T09:56:27+00:00"
         },
         {
             "name": "dreamfactory/df-exporter-prometheus",
@@ -1952,16 +2331,16 @@
         },
         {
             "name": "dreamfactory/df-file",
-            "version": "dev-develop",
+            "version": "0.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dreamfactorysoftware/df-file.git",
-                "reference": "cc6afc6f1a5f36dc487eb87fd95d96432d4c2426"
+                "reference": "48a7325419a7981a7e3ef636cac59b32d233af9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dreamfactorysoftware/df-file/zipball/cc6afc6f1a5f36dc487eb87fd95d96432d4c2426",
-                "reference": "cc6afc6f1a5f36dc487eb87fd95d96432d4c2426",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-file/zipball/48a7325419a7981a7e3ef636cac59b32d233af9c",
+                "reference": "48a7325419a7981a7e3ef636cac59b32d233af9c",
                 "shasum": ""
             },
             "require": {
@@ -2021,24 +2400,24 @@
                 "source": "https://github.com/dreamfactorysoftware/df-file",
                 "wiki": "https://wiki.dreamfactory.com"
             },
-            "time": "2025-01-10T16:32:07+00:00"
+            "time": "2025-02-19T06:15:34+00:00"
         },
         {
             "name": "dreamfactory/df-firebird",
-            "version": "dev-develop",
+            "version": "0.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dreamfactorysoftware/df-firebird.git",
-                "reference": "bc61449110fc638735828b8586bd8fef55f1c348"
+                "reference": "d1baf2cf8c2c96803ce3bae145c5a934c881ab06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dreamfactorysoftware/df-firebird/zipball/bc61449110fc638735828b8586bd8fef55f1c348",
-                "reference": "bc61449110fc638735828b8586bd8fef55f1c348",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-firebird/zipball/d1baf2cf8c2c96803ce3bae145c5a934c881ab06",
+                "reference": "d1baf2cf8c2c96803ce3bae145c5a934c881ab06",
                 "shasum": ""
             },
             "require": {
-                "dreamfactory/df-sqldb": "dev-develop as 1.2.0"
+                "dreamfactory/df-sqldb": "~1.2"
             },
             "type": "library",
             "extra": {
@@ -2086,24 +2465,24 @@
                 "source": "https://github.com/dreamfactorysoftware/df-firebird",
                 "wiki": "https://wiki.dreamfactory.com"
             },
-            "time": "2025-02-13T15:27:31+00:00"
+            "time": "2025-02-19T06:15:49+00:00"
         },
         {
             "name": "dreamfactory/df-git",
-            "version": "dev-develop",
+            "version": "0.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dreamfactorysoftware/df-git.git",
-                "reference": "43b87622dacd1563fbd2d565e45b7baed46c2e54"
+                "reference": "dbbc769009801d236fb64fec0eca2c8208e0203c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dreamfactorysoftware/df-git/zipball/43b87622dacd1563fbd2d565e45b7baed46c2e54",
-                "reference": "43b87622dacd1563fbd2d565e45b7baed46c2e54",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-git/zipball/dbbc769009801d236fb64fec0eca2c8208e0203c",
+                "reference": "dbbc769009801d236fb64fec0eca2c8208e0203c",
                 "shasum": ""
             },
             "require": {
-                "dreamfactory/df-core": "dev-develop as 1.0.4",
+                "dreamfactory/df-core": "~1.0.4",
                 "graham-campbell/bitbucket": "^10.4",
                 "graham-campbell/github": "^12.6",
                 "graham-campbell/gitlab": "^7.5",
@@ -2158,20 +2537,414 @@
                 "source": "https://github.com/dreamfactorysoftware/df-git",
                 "wiki": "https://wiki.dreamfactory.com"
             },
-            "time": "2025-02-13T15:30:54+00:00"
+            "time": "2025-02-19T06:16:07+00:00"
         },
         {
-            "name": "dreamfactory/df-mongo-logs",
-            "version": "dev-develop",
+            "name": "dreamfactory/df-hadoop",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dreamfactorysoftware/df-mongo-logs.git",
-                "reference": "8244599d921c5dc7d0b6ec9ca941a03df0e6b950"
+                "url": "https://github.com/dreamfactorysoftware/df-hadoop.git",
+                "reference": "0adeedc52da90b11b0edac3e67cf6e928aa2151d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dreamfactorysoftware/df-mongo-logs/zipball/8244599d921c5dc7d0b6ec9ca941a03df0e6b950",
-                "reference": "8244599d921c5dc7d0b6ec9ca941a03df0e6b950",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-hadoop/zipball/0adeedc52da90b11b0edac3e67cf6e928aa2151d",
+                "reference": "0adeedc52da90b11b0edac3e67cf6e928aa2151d",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-core": "~1.0",
+                "dreamfactory/df-database": "~1.0",
+                "dreamfactory/df-file": "~0.8",
+                "dreamfactory/df-sqldb": "~1.0",
+                "dreamfactory/df-system": "~0.4",
+                "dreamfactory/php-webhdfs": "~1.1.1",
+                "ext-json": "*",
+                "ext-odbc": "*",
+                "ext-pdo": "*",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "@stable"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\Hadoop\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\Hadoop\\": "src/"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Volodymyr Polishchuk",
+                    "email": "volodymyrpo@softwareplanetgroup.com"
+                },
+                {
+                    "name": "DreamFactory Team",
+                    "email": "code@dreamfactory.com"
+                }
+            ],
+            "description": "DreamFactory(tm) Hadoop Connector",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "connector",
+                "dreamfactory",
+                "hadoop"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-hadoop",
+                "issues": "https://github.com/dreamfactorysoftware/df-hadoop/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-02-27T15:27:17+00:00"
+        },
+        {
+            "name": "dreamfactory/df-ibmdb2",
+            "version": "0.17.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-ibmdb2.git",
+                "reference": "7dba6164df41e005ad5e58a4cad822f81d1af079"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-ibmdb2/zipball/7dba6164df41e005ad5e58a4cad822f81d1af079",
+                "reference": "7dba6164df41e005ad5e58a4cad822f81d1af079",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-sqldb": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.15.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\IbmDb2\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\IbmDb2\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Arif Islam",
+                    "email": "arifislam@dreamfactory.com"
+                },
+                {
+                    "name": "Lee Hicks",
+                    "email": "leehicks@dreamfactory.com"
+                }
+            ],
+            "description": "The DreamFactory(tm) IBM DB2 Service.",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "api",
+                "database",
+                "db",
+                "dreamfactory",
+                "ibm db2",
+                "rest",
+                "sql"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-ibmdb2",
+                "issues": "https://github.com/dreamfactorysoftware/df-ibmdb2/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-02-27T14:35:00+00:00"
+        },
+        {
+            "name": "dreamfactory/df-informix",
+            "version": "0.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-informix.git",
+                "reference": "fd0f8ea1e71c65f6b52f927e0a59019d9ac8cdba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-informix/zipball/fd0f8ea1e71c65f6b52f927e0a59019d9ac8cdba",
+                "reference": "fd0f8ea1e71c65f6b52f927e0a59019d9ac8cdba",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-sqldb": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.5.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\Informix\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\Informix\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Arif Islam",
+                    "email": "arifislam@dreamfactory.com"
+                },
+                {
+                    "name": "Lee Hicks",
+                    "email": "leehicks@dreamfactory.com"
+                }
+            ],
+            "description": "The DreamFactory(tm) IBM Informix Service.",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "api",
+                "database",
+                "db",
+                "dreamfactory",
+                "informix",
+                "rest",
+                "sql"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-informix",
+                "issues": "https://github.com/dreamfactorysoftware/df-informix/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-02-27T14:37:45+00:00"
+        },
+        {
+            "name": "dreamfactory/df-limits",
+            "version": "0.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-limits.git",
+                "reference": "a64bdf7d07d7376944525f11949a50a46ddffd2e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-limits/zipball/a64bdf7d07d7376944525f11949a50a46ddffd2e",
+                "reference": "a64bdf7d07d7376944525f11949a50a46ddffd2e",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-core": "~1.0",
+                "dreamfactory/df-system": "~0.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.7.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\Limit\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\Limit\\": "src/"
+                }
+            },
+            "license": [
+                "Proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "DreamFactory Team",
+                    "email": "code@dreamfactory.com"
+                }
+            ],
+            "description": "Limits configuration package for DreamFactory.",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "dreamfactory",
+                "limits"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-limits",
+                "issues": "https://github.com/dreamfactorysoftware/df-limits/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-03-29T01:29:05+00:00"
+        },
+        {
+            "name": "dreamfactory/df-logger",
+            "version": "0.14.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-logger.git",
+                "reference": "5b91be1cbdc02f82b8c1e856ace454569bf1f0f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-logger/zipball/5b91be1cbdc02f82b8c1e856ace454569bf1f0f6",
+                "reference": "5b91be1cbdc02f82b8c1e856ace454569bf1f0f6",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-core": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.11.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\Logger\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\Logger\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Arif Islam",
+                    "email": "arifislam@dreamfactory.com"
+                },
+                {
+                    "name": "Lee Hicks",
+                    "email": "leehicks@dreamfactory.com"
+                }
+            ],
+            "description": "Logging service for DreamFactory Platform 2.0",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "api",
+                "dreamfactory",
+                "elasticsearch",
+                "elk",
+                "kibana",
+                "log",
+                "logger",
+                "logstash",
+                "rest"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-logger",
+                "issues": "https://github.com/dreamfactorysoftware/df-logger/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-09-12T04:50:42+00:00"
+        },
+        {
+            "name": "dreamfactory/df-memsql",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-memsql.git",
+                "reference": "bf24455039679371a91148fe12bca04f0f489208"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-memsql/zipball/bf24455039679371a91148fe12bca04f0f489208",
+                "reference": "bf24455039679371a91148fe12bca04f0f489208",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-mysqldb": "~0.3",
+                "dreamfactory/df-sqldb": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\MemSql\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\MemSql\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Arif Islam",
+                    "email": "arifislam@dreamfactory.com"
+                },
+                {
+                    "name": "Lee Hicks",
+                    "email": "leehicks@dreamfactory.com"
+                }
+            ],
+            "description": "The DreamFactory(tm) MemSQL DB Service.",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "api",
+                "database",
+                "db",
+                "dreamfactory",
+                "memsql",
+                "mysql",
+                "rest",
+                "sql"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-memsql",
+                "issues": "https://github.com/dreamfactorysoftware/df-memsql/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-02-27T14:39:56+00:00"
+        },
+        {
+            "name": "dreamfactory/df-mongo-logs",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-mongo-logs.git",
+                "reference": "1b9bbff8cf64cd051a68bf8e71025ff7e353b081"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-mongo-logs/zipball/1b9bbff8cf64cd051a68bf8e71025ff7e353b081",
+                "reference": "1b9bbff8cf64cd051a68bf8e71025ff7e353b081",
                 "shasum": ""
             },
             "require": {
@@ -2227,7 +3000,75 @@
                 "source": "https://github.com/dreamfactorysoftware/df-skeleton",
                 "wiki": "https://wiki.dreamfactory.com"
             },
-            "time": "2025-02-12T11:59:34+00:00"
+            "time": "2025-02-19T06:16:26+00:00"
+        },
+        {
+            "name": "dreamfactory/df-mongodb",
+            "version": "0.21.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-mongodb.git",
+                "reference": "e9194edc1c7586f2084f339e739aa8116bda606b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-mongodb/zipball/e9194edc1c7586f2084f339e739aa8116bda606b",
+                "reference": "e9194edc1c7586f2084f339e739aa8116bda606b",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-database": "~1.0",
+                "dreamfactory/df-file": "~0.8",
+                "jenssegers/mongodb": "^4.2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\MongoDb\\ServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-develop": "0.15.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\MongoDb\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Arif Islam",
+                    "email": "arifislam@dreamfactory.com"
+                },
+                {
+                    "name": "Lee Hicks",
+                    "email": "leehicks@dreamfactory.com"
+                }
+            ],
+            "description": "The DreamFactory(tm) MongoDB Service.",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "api",
+                "database",
+                "db",
+                "dreamfactory",
+                "mongodb",
+                "nosql",
+                "rest"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "issues": "https://github.com/dreamfactorysoftware/df-mongodb/issues",
+                "source": "https://github.com/dreamfactorysoftware/df-mongodb",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2025-02-19T06:16:42+00:00"
         },
         {
             "name": "dreamfactory/df-mqtt",
@@ -2290,6 +3131,129 @@
                 "wiki": "https://wiki.dreamfactory.com"
             },
             "time": "2023-02-27T14:45:35+00:00"
+        },
+        {
+            "name": "dreamfactory/df-mysqldb",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-mysqldb.git",
+                "reference": "de141f103bfdefb9f235150be9ef3f85745b8c2c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-mysqldb/zipball/de141f103bfdefb9f235150be9ef3f85745b8c2c",
+                "reference": "de141f103bfdefb9f235150be9ef3f85745b8c2c",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-core": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\MySqlDb\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\MySqlDb\\": "src/"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "The DreamFactory(tm) MySQL DB Service.",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "api",
+                "db",
+                "dreamfactory",
+                "mysql",
+                "rest"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-mysqldb",
+                "issues": "https://github.com/dreamfactorysoftware/df-mysqldb/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-02-27T14:50:21+00:00"
+        },
+        {
+            "name": "dreamfactory/df-notification",
+            "version": "0.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-notification.git",
+                "reference": "d0997ee31fed9f5c994d6ae630a816524763c6c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-notification/zipball/d0997ee31fed9f5c994d6ae630a816524763c6c7",
+                "reference": "d0997ee31fed9f5c994d6ae630a816524763c6c7",
+                "shasum": ""
+            },
+            "require": {
+                "apple/apn-push": "^3.1",
+                "dreamfactory/df-core": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.7.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\Notification\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\Notification\\": "src/",
+                    "Sly\\NotificationPusher\\": "lib/pusher/src/Sly/NotificationPusher",
+                    "sngrl\\PhpFirebaseCloudMessaging\\": "lib/fcm/src"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Arif Islam",
+                    "email": "arifislam@dreamfactory.com"
+                },
+                {
+                    "name": "Lee Hicks",
+                    "email": "leehicks@dreamfactory.com"
+                }
+            ],
+            "description": "iOS and GCM push notification support for DreamFactory",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "APNS",
+                "GCM",
+                "android",
+                "apple",
+                "dreamfactory",
+                "google",
+                "iOS",
+                "notification",
+                "push"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-notification",
+                "issues": "https://github.com/dreamfactorysoftware/df-notification/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-02-28T15:08:03+00:00"
         },
         {
             "name": "dreamfactory/df-oauth",
@@ -2357,6 +3321,141 @@
                 "wiki": "https://wiki.dreamfactory.com"
             },
             "time": "2023-02-28T15:21:35+00:00"
+        },
+        {
+            "name": "dreamfactory/df-oidc",
+            "version": "0.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-oidc.git",
+                "reference": "fa70d52d5845864bc7d8db7a7bbcbdfc423a07ff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-oidc/zipball/fa70d52d5845864bc7d8db7a7bbcbdfc423a07ff",
+                "reference": "fa70d52d5845864bc7d8db7a7bbcbdfc423a07ff",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-oauth": "~0.16",
+                "phpseclib/phpseclib": "3.0.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.5.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\Oidc\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\Oidc\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Arif Islam",
+                    "email": "arifislam@dreamfactory.com"
+                },
+                {
+                    "name": "Lee Hicks",
+                    "email": "leehicks@dreamfactory.com"
+                }
+            ],
+            "description": "OpenID Connect support for DreamFactory",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "api",
+                "auth",
+                "authentication",
+                "authorization",
+                "connect",
+                "dreamfactory",
+                "oauth",
+                "openid",
+                "rest",
+                "user_info"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-oidc",
+                "issues": "https://github.com/dreamfactorysoftware/df-oidc/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-02-27T14:47:34+00:00"
+        },
+        {
+            "name": "dreamfactory/df-oracledb",
+            "version": "0.18.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-oracledb.git",
+                "reference": "f2d7f18fcab4902281311715ffeccfb0a52aa905"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-oracledb/zipball/f2d7f18fcab4902281311715ffeccfb0a52aa905",
+                "reference": "f2d7f18fcab4902281311715ffeccfb0a52aa905",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-sqldb": "~1.2",
+                "yajra/laravel-oci8": "^11.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.15.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\Oracle\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\Oracle\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Arif Islam",
+                    "email": "arifislam@dreamfactory.com"
+                },
+                {
+                    "name": "Lee Hicks",
+                    "email": "leehicks@dreamfactory.com"
+                }
+            ],
+            "description": "The DreamFactory(tm) Oracle DB Service.",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "api",
+                "database",
+                "db",
+                "dreamfactory",
+                "oracle",
+                "rest",
+                "sql"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-oracledb",
+                "issues": "https://github.com/dreamfactorysoftware/df-oracledb/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2025-02-19T06:16:57+00:00"
         },
         {
             "name": "dreamfactory/df-pubsub",
@@ -2553,21 +3652,466 @@
             "time": "2023-03-29T01:40:57+00:00"
         },
         {
-            "name": "dreamfactory/df-sqldb",
-            "version": "dev-develop",
+            "name": "dreamfactory/df-salesforce",
+            "version": "0.18.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dreamfactorysoftware/df-sqldb.git",
-                "reference": "ebbf22c5e35b57fd3d478736a2d9aeb14f14a6d0"
+                "url": "https://github.com/dreamfactorysoftware/df-salesforce.git",
+                "reference": "3c2afcda028a31735548e481a24004505e377552"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dreamfactorysoftware/df-sqldb/zipball/ebbf22c5e35b57fd3d478736a2d9aeb14f14a6d0",
-                "reference": "ebbf22c5e35b57fd3d478736a2d9aeb14f14a6d0",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-salesforce/zipball/3c2afcda028a31735548e481a24004505e377552",
+                "reference": "3c2afcda028a31735548e481a24004505e377552",
                 "shasum": ""
             },
             "require": {
-                "dreamfactory/df-database": "dev-develop as 1.3.0"
+                "dreamfactory/df-database": "~1.0",
+                "socialiteproviders/salesforce": "^4.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.15.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\Salesforce\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\Salesforce\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Arif Islam",
+                    "email": "arifislam@dreamfactory.com"
+                },
+                {
+                    "name": "Lee Hicks",
+                    "email": "leehicks@dreamfactory.com"
+                }
+            ],
+            "description": "The DreamFactory(tm) Salesforce Service.",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "api",
+                "database",
+                "db",
+                "dreamfactory",
+                "rest",
+                "salesforce"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-salesforce",
+                "issues": "https://github.com/dreamfactorysoftware/df-salesforce/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-02-27T14:58:51+00:00"
+        },
+        {
+            "name": "dreamfactory/df-saml",
+            "version": "0.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-saml.git",
+                "reference": "e7f071905df0c8f6cb5bc9a18835c5fff6280ce9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-saml/zipball/e7f071905df0c8f6cb5bc9a18835c5fff6280ce9",
+                "reference": "e7f071905df0c8f6cb5bc9a18835c5fff6280ce9",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-core": "~1.0",
+                "onelogin/php-saml": "4.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.8.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\Saml\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\Saml\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Arif Islam",
+                    "email": "arifislam@dreamfactory.com"
+                },
+                {
+                    "name": "Lee Hicks",
+                    "email": "leehicks@dreamfactory.com"
+                }
+            ],
+            "description": "SAML 2.0 support for DreamFactory",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "api",
+                "auth",
+                "authentication",
+                "dreamfactory",
+                "rest",
+                "saml",
+                "xml"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-saml",
+                "issues": "https://github.com/dreamfactorysoftware/df-saml/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-02-27T15:00:54+00:00"
+        },
+        {
+            "name": "dreamfactory/df-scheduler",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-scheduler.git",
+                "reference": "d618879473a0a0b63554008c2f1cd2e56632ea53"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-scheduler/zipball/d618879473a0a0b63554008c2f1cd2e56632ea53",
+                "reference": "d618879473a0a0b63554008c2f1cd2e56632ea53",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-core": "~1.0",
+                "dreamfactory/df-system": "~0.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "@stable"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\Scheduler\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\Scheduler\\": "src/"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Yaroslav Mokhurenko",
+                    "email": "yaroslavm@softwareplanet.uk.com"
+                }
+            ],
+            "description": "DreamFactory(tm) Scheduler Code",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "dreamfactory",
+                "schedule",
+                "scheduler"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-scheduler",
+                "issues": "https://github.com/dreamfactorysoftware/df-scheduler/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-02-28T08:48:12+00:00"
+        },
+        {
+            "name": "dreamfactory/df-script",
+            "version": "0.13.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-script.git",
+                "reference": "d0349614b56e1c5f2a3613ffb9d0052af98ccc9d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-script/zipball/d0349614b56e1c5f2a3613ffb9d0052af98ccc9d",
+                "reference": "d0349614b56e1c5f2a3613ffb9d0052af98ccc9d",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-core": "~1.0",
+                "dreamfactory/df-system": "~0.5",
+                "php": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\Script\\ServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-develop": "0.8.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\Script\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "DreamFactory Team",
+                    "email": "code@dreamfactory.com"
+                }
+            ],
+            "description": "DreamFactory(tm) Scripting Components",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "api",
+                "dreamfactory",
+                "nodejs",
+                "php",
+                "python",
+                "python3",
+                "rest"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "issues": "https://github.com/dreamfactorysoftware/df-script/issues",
+                "source": "https://github.com/dreamfactorysoftware/df-script",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-02-27T15:02:53+00:00"
+        },
+        {
+            "name": "dreamfactory/df-snowflake",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-snowflake.git",
+                "reference": "65bea9cade7b2507a2eee31bfadaba8db61af15a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-snowflake/zipball/65bea9cade7b2507a2eee31bfadaba8db61af15a",
+                "reference": "65bea9cade7b2507a2eee31bfadaba8db61af15a",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-sqldb": "~1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "@stable"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\Snowflake\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\Snowflake\\": "src/"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Yaroslav Mokhurenko",
+                    "email": "yaroslavmo@softwareplanetgroup.com"
+                }
+            ],
+            "description": "DreamFactory(tm) Snowflake DB Service",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "connector",
+                "dreamfactory",
+                "snowflake"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-snowflake",
+                "issues": "https://github.com/dreamfactorysoftware/df-snowflake/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2025-02-19T06:17:12+00:00"
+        },
+        {
+            "name": "dreamfactory/df-soap",
+            "version": "0.17.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-soap.git",
+                "reference": "7e7470cafe2b43ad5a7743aa5ffe31f08801ec55"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-soap/zipball/7e7470cafe2b43ad5a7743aa5ffe31f08801ec55",
+                "reference": "7e7470cafe2b43ad5a7743aa5ffe31f08801ec55",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-core": "~1.0",
+                "php": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.14.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\Soap\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\Soap\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Arif Islam",
+                    "email": "arifislam@dreamfactory.com"
+                },
+                {
+                    "name": "Lee Hicks",
+                    "email": "leehicks@dreamfactory.com"
+                }
+            ],
+            "description": "SOAP Service for the DreamFactory Platform 2.0.",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "api",
+                "dreamfactory",
+                "rest",
+                "soap",
+                "wsdl"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-soap",
+                "issues": "https://github.com/dreamfactorysoftware/df-soap/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-03-29T01:42:10+00:00"
+        },
+        {
+            "name": "dreamfactory/df-sqlanywhere",
+            "version": "0.17.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-sqlanywhere.git",
+                "reference": "5b427e05f66641205b02ee6f094262c7d721c25c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-sqlanywhere/zipball/5b427e05f66641205b02ee6f094262c7d721c25c",
+                "reference": "5b427e05f66641205b02ee6f094262c7d721c25c",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-sqldb": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.15.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\SqlAnywhere\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\SqlAnywhere\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Arif Islam",
+                    "email": "arifislam@dreamfactory.com"
+                },
+                {
+                    "name": "Lee Hicks",
+                    "email": "leehicks@dreamfactory.com"
+                }
+            ],
+            "description": "The DreamFactory(tm) SQL Anywhere DB Service.",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "api",
+                "database",
+                "db",
+                "dreamfactory",
+                "rest",
+                "sap",
+                "sql"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-sqlanywhere",
+                "issues": "https://github.com/dreamfactorysoftware/df-sqlanywhere/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-02-27T15:07:26+00:00"
+        },
+        {
+            "name": "dreamfactory/df-sqldb",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-sqldb.git",
+                "reference": "65bd5f0a144fd1d2da47f4157ae36df1857d1dc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-sqldb/zipball/65bd5f0a144fd1d2da47f4157ae36df1857d1dc9",
+                "reference": "65bd5f0a144fd1d2da47f4157ae36df1857d1dc9",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-database": "~1.3"
             },
             "type": "library",
             "extra": {
@@ -2619,7 +4163,74 @@
                 "source": "https://github.com/dreamfactorysoftware/df-sqldb",
                 "wiki": "https://wiki.dreamfactory.com"
             },
-            "time": "2025-02-13T15:35:04+00:00"
+            "time": "2025-02-19T06:17:31+00:00"
+        },
+        {
+            "name": "dreamfactory/df-sqlsrv",
+            "version": "0.18.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/df-sqlsrv.git",
+                "reference": "becdd512646379e946bcb03a643addde24283e06"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/df-sqlsrv/zipball/becdd512646379e946bcb03a643addde24283e06",
+                "reference": "becdd512646379e946bcb03a643addde24283e06",
+                "shasum": ""
+            },
+            "require": {
+                "dreamfactory/df-sqldb": "~1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.15.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "DreamFactory\\Core\\SqlSrv\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DreamFactory\\Core\\SqlSrv\\": "src/",
+                    "Doctrine\\DBAL\\": "lib/DoctrinePdoDblib/Doctrine/DBAL"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Arif Islam",
+                    "email": "arifislam@dreamfactory.com"
+                },
+                {
+                    "name": "Lee Hicks",
+                    "email": "leehicks@dreamfactory.com"
+                }
+            ],
+            "description": "The DreamFactory(tm) SQL Server DB Service.",
+            "homepage": "https://www.dreamfactory.com/",
+            "keywords": [
+                "api",
+                "database",
+                "db",
+                "dreamfactory",
+                "rest",
+                "sql",
+                "sql server",
+                "sqlsrv"
+            ],
+            "support": {
+                "email": "dspsupport@dreamfactory.com",
+                "source": "https://github.com/dreamfactorysoftware/df-sqlsrv",
+                "issues": "https://github.com/dreamfactorysoftware/df-sqlsrv/issues",
+                "wiki": "https://wiki.dreamfactory.com"
+            },
+            "time": "2023-09-11T01:42:58+00:00"
         },
         {
             "name": "dreamfactory/df-system",
@@ -2643,13 +4254,13 @@
             },
             "type": "library",
             "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                },
                 "laravel": {
                     "providers": [
                         "DreamFactory\\Core\\System\\ServiceProvider"
                     ]
-                },
-                "branch-alias": {
-                    "dev-develop": "0.1.x-dev"
                 }
             },
             "autoload": {
@@ -2657,7 +4268,6 @@
                     "DreamFactory\\Core\\System\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
@@ -2680,8 +4290,8 @@
             ],
             "support": {
                 "email": "dspsupport@dreamfactory.com",
-                "issues": "https://github.com/dreamfactorysoftware/df-system/issues",
                 "source": "https://github.com/dreamfactorysoftware/df-system",
+                "issues": "https://github.com/dreamfactorysoftware/df-system/issues",
                 "wiki": "https://wiki.dreamfactory.com"
             },
             "time": "2023-03-13T08:35:29+00:00"
@@ -2799,6 +4409,64 @@
             "time": "2015-01-22T19:58:42+00:00"
         },
         {
+            "name": "dreamfactory/php-webhdfs",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dreamfactorysoftware/php-WebHDFS.git",
+                "reference": "f5b9b71d6db1cbc1957b96a06b58b21f333e152f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dreamfactorysoftware/php-WebHDFS/zipball/f5b9b71d6db1cbc1957b96a06b58b21f333e152f",
+                "reference": "f5b9b71d6db1cbc1957b96a06b58b21f333e152f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "org\\apache\\hadoop\\": "src/",
+                    "org\\apache\\hadoop\\tools": "app/models/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "tranch-xiao",
+                    "homepage": "https://github.com/tranch-xiao"
+                },
+                {
+                    "name": "dshap",
+                    "homepage": "https://github.com/dshap"
+                },
+                {
+                    "name": "jacobko",
+                    "homepage": "https://github.com/jacobko"
+                },
+                {
+                    "name": "yosshi",
+                    "homepage": "https://github.com/yosshi"
+                },
+                {
+                    "name": "Sebastian Lagemann",
+                    "email": "sebastian@iqu.com"
+                }
+            ],
+            "description": "PHP WebHDFS, forked from https://github.com/simpleenergy/php-WebHDFS",
+            "support": {
+                "source": "https://github.com/dreamfactorysoftware/php-WebHDFS/tree/1.1.1"
+            },
+            "time": "2023-03-03T10:30:32+00:00"
+        },
+        {
             "name": "egulias/email-validator",
             "version": "4.0.3",
             "source": {
@@ -2864,6 +4532,67 @@
                 }
             ],
             "time": "2024-12-27T00:36:43+00:00"
+        },
+        {
+            "name": "ezyang/htmlpurifier",
+            "version": "v4.18.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezyang/htmlpurifier.git",
+                "reference": "cb56001e54359df7ae76dc522d08845dc741621b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/cb56001e54359df7ae76dc522d08845dc741621b",
+                "reference": "cb56001e54359df7ae76dc522d08845dc741621b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~5.6.0 || ~7.0.0 || ~7.1.0 || ~7.2.0 || ~7.3.0 || ~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0"
+            },
+            "require-dev": {
+                "cerdic/css-tidy": "^1.7 || ^2.0",
+                "simpletest/simpletest": "dev-master"
+            },
+            "suggest": {
+                "cerdic/css-tidy": "If you want to use the filter 'Filter.ExtractStyleBlocks'.",
+                "ext-bcmath": "Used for unit conversion and imagecrash protection",
+                "ext-iconv": "Converts text to and from non-UTF-8 encodings",
+                "ext-tidy": "Used for pretty-printing HTML"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "library/HTMLPurifier.composer.php"
+                ],
+                "psr-0": {
+                    "HTMLPurifier": "library/"
+                },
+                "exclude-from-classmap": [
+                    "/library/HTMLPurifier/Language/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Edward Z. Yang",
+                    "email": "admin@htmlpurifier.org",
+                    "homepage": "http://ezyang.com"
+                }
+            ],
+            "description": "Standards compliant HTML filter written in PHP",
+            "homepage": "http://htmlpurifier.org/",
+            "keywords": [
+                "html"
+            ],
+            "support": {
+                "issues": "https://github.com/ezyang/htmlpurifier/issues",
+                "source": "https://github.com/ezyang/htmlpurifier/tree/v4.18.0"
+            },
+            "time": "2024-11-01T03:51:45+00:00"
         },
         {
             "name": "firebase/php-jwt",
@@ -2998,6 +4727,438 @@
                 }
             ],
             "time": "2023-10-12T05:21:21+00:00"
+        },
+        {
+            "name": "google/auth",
+            "version": "v1.46.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/google-auth-library-php.git",
+                "reference": "7fafae99a41984cbfb92508174263cf7bf3049b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/7fafae99a41984cbfb92508174263cf7bf3049b9",
+                "reference": "7fafae99a41984cbfb92508174263cf7bf3049b9",
+                "shasum": ""
+            },
+            "require": {
+                "firebase/php-jwt": "^6.0",
+                "guzzlehttp/guzzle": "^7.4.5",
+                "guzzlehttp/psr7": "^2.4.5",
+                "php": "^8.0",
+                "psr/cache": "^2.0||^3.0",
+                "psr/http-message": "^1.1||^2.0",
+                "psr/log": "^3.0"
+            },
+            "require-dev": {
+                "guzzlehttp/promises": "^2.0",
+                "kelvinmo/simplejwt": "0.7.1",
+                "phpseclib/phpseclib": "^3.0.35",
+                "phpspec/prophecy-phpunit": "^2.1",
+                "phpunit/phpunit": "^9.6",
+                "sebastian/comparator": ">=1.2.3",
+                "squizlabs/php_codesniffer": "^3.5",
+                "symfony/process": "^6.0||^7.0",
+                "webmozart/assert": "^1.11"
+            },
+            "suggest": {
+                "phpseclib/phpseclib": "May be used in place of OpenSSL for signing strings or for token management. Please require version ^2."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Google\\Auth\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Google Auth Library for PHP",
+            "homepage": "https://github.com/google/google-auth-library-php",
+            "keywords": [
+                "Authentication",
+                "google",
+                "oauth2"
+            ],
+            "support": {
+                "docs": "https://cloud.google.com/php/docs/reference/auth/latest",
+                "issues": "https://github.com/googleapis/google-auth-library-php/issues",
+                "source": "https://github.com/googleapis/google-auth-library-php/tree/v1.46.0"
+            },
+            "time": "2025-02-12T22:21:37+00:00"
+        },
+        {
+            "name": "google/cloud-bigquery",
+            "version": "v1.31.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/google-cloud-php-bigquery.git",
+                "reference": "e7bdf1494bf86ac3c2078b208163b2a1b56b3568"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-bigquery/zipball/e7bdf1494bf86ac3c2078b208163b2a1b56b3568",
+                "reference": "e7bdf1494bf86ac3c2078b208163b2a1b56b3568",
+                "shasum": ""
+            },
+            "require": {
+                "google/cloud-core": "^1.57",
+                "php": "^8.0",
+                "ramsey/uuid": "^3.0|^4.0"
+            },
+            "require-dev": {
+                "erusev/parsedown": "^1.6",
+                "google/cloud-storage": "^1.3",
+                "phpdocumentor/reflection": "^5.3.3||^6.0",
+                "phpdocumentor/reflection-docblock": "^5.3",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpunit/phpunit": "^9.0",
+                "squizlabs/php_codesniffer": "2.*"
+            },
+            "suggest": {
+                "google/cloud-storage": "Makes it easier to load data from Cloud Storage into BigQuery"
+            },
+            "type": "library",
+            "extra": {
+                "component": {
+                    "id": "cloud-bigquery",
+                    "path": "BigQuery",
+                    "entry": "src/BigQueryClient.php",
+                    "target": "googleapis/google-cloud-php-bigquery.git",
+                    "displayName": "Google Cloud BigQuery"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Google\\Cloud\\BigQuery\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "BigQuery Client for PHP",
+            "support": {
+                "source": "https://github.com/googleapis/google-cloud-php-bigquery/tree/v1.31.1"
+            },
+            "time": "2024-12-12T21:15:35+00:00"
+        },
+        {
+            "name": "google/cloud-core",
+            "version": "v1.62.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/google-cloud-php-core.git",
+                "reference": "8de597fbd6fcac35a33594672d180c5e271fb4f0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-core/zipball/8de597fbd6fcac35a33594672d180c5e271fb4f0",
+                "reference": "8de597fbd6fcac35a33594672d180c5e271fb4f0",
+                "shasum": ""
+            },
+            "require": {
+                "google/auth": "^1.34",
+                "google/gax": "^1.36.0",
+                "guzzlehttp/guzzle": "^6.5.8|^7.4.4",
+                "guzzlehttp/promises": "^1.4||^2.0",
+                "guzzlehttp/psr7": "^2.6",
+                "monolog/monolog": "^2.9|^3.0",
+                "php": "^8.0",
+                "psr/http-message": "^1.0|^2.0",
+                "rize/uri-template": "~0.3"
+            },
+            "require-dev": {
+                "erusev/parsedown": "^1.6",
+                "google/cloud-common-protos": "~0.5",
+                "opis/closure": "^3",
+                "phpdocumentor/reflection": "^5.3.3||^6.0",
+                "phpdocumentor/reflection-docblock": "^5.3",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpunit/phpunit": "^9.0",
+                "squizlabs/php_codesniffer": "2.*"
+            },
+            "suggest": {
+                "opis/closure": "May be used to serialize closures to process jobs in the batch daemon. Please require version ^3.",
+                "symfony/lock": "Required for the Spanner cached based session pool. Please require the following commit: 3.3.x-dev#1ba6ac9"
+            },
+            "bin": [
+                "bin/google-cloud-batch"
+            ],
+            "type": "library",
+            "extra": {
+                "component": {
+                    "id": "cloud-core",
+                    "path": "Core",
+                    "entry": "src/ServiceBuilder.php",
+                    "target": "googleapis/google-cloud-php-core.git"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Google\\Cloud\\Core\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Google Cloud PHP shared dependency, providing functionality useful to all components.",
+            "support": {
+                "source": "https://github.com/googleapis/google-cloud-php-core/tree/v1.62.0"
+            },
+            "time": "2025-02-08T00:05:17+00:00"
+        },
+        {
+            "name": "google/common-protos",
+            "version": "4.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/common-protos-php.git",
+                "reference": "2554ed1f09aa20faae7b71b590e7063df97ff670"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/common-protos-php/zipball/2554ed1f09aa20faae7b71b590e7063df97ff670",
+                "reference": "2554ed1f09aa20faae7b71b590e7063df97ff670",
+                "shasum": ""
+            },
+            "require": {
+                "google/protobuf": "^v3.25.3||^4.26.1",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.6"
+            },
+            "type": "library",
+            "extra": {
+                "component": {
+                    "id": "common-protos",
+                    "path": "CommonProtos",
+                    "entry": "README.md",
+                    "target": "googleapis/common-protos-php.git"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Google\\Api\\": "src/Api",
+                    "Google\\Iam\\": "src/Iam",
+                    "Google\\Rpc\\": "src/Rpc",
+                    "Google\\Type\\": "src/Type",
+                    "Google\\Cloud\\": "src/Cloud",
+                    "GPBMetadata\\Google\\Api\\": "metadata/Api",
+                    "GPBMetadata\\Google\\Iam\\": "metadata/Iam",
+                    "GPBMetadata\\Google\\Rpc\\": "metadata/Rpc",
+                    "GPBMetadata\\Google\\Type\\": "metadata/Type",
+                    "GPBMetadata\\Google\\Cloud\\": "metadata/Cloud",
+                    "GPBMetadata\\Google\\Logging\\": "metadata/Logging"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Google API Common Protos for PHP",
+            "homepage": "https://github.com/googleapis/common-protos-php",
+            "keywords": [
+                "google"
+            ],
+            "support": {
+                "source": "https://github.com/googleapis/common-protos-php/tree/v4.11.0"
+            },
+            "time": "2025-02-18T19:46:55+00:00"
+        },
+        {
+            "name": "google/gax",
+            "version": "v1.36.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/gax-php.git",
+                "reference": "140599cf5eae2432363ce6198e9fdff851625a7a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/140599cf5eae2432363ce6198e9fdff851625a7a",
+                "reference": "140599cf5eae2432363ce6198e9fdff851625a7a",
+                "shasum": ""
+            },
+            "require": {
+                "google/auth": "^1.45",
+                "google/common-protos": "^4.4",
+                "google/grpc-gcp": "^0.4",
+                "google/longrunning": "~0.4",
+                "google/protobuf": "^v3.25.3||^4.26.1",
+                "grpc/grpc": "^1.13",
+                "guzzlehttp/promises": "^2.0",
+                "guzzlehttp/psr7": "^2.0",
+                "php": "^8.0",
+                "ramsey/uuid": "^4.0"
+            },
+            "conflict": {
+                "ext-protobuf": "<3.7.0"
+            },
+            "require-dev": {
+                "phpspec/prophecy-phpunit": "^2.1",
+                "phpstan/phpstan": "^2.0",
+                "phpunit/phpunit": "^9.6",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Google\\ApiCore\\": "src",
+                    "GPBMetadata\\ApiCore\\": "metadata/ApiCore"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Google API Core for PHP",
+            "homepage": "https://github.com/googleapis/gax-php",
+            "keywords": [
+                "google"
+            ],
+            "support": {
+                "issues": "https://github.com/googleapis/gax-php/issues",
+                "source": "https://github.com/googleapis/gax-php/tree/v1.36.0"
+            },
+            "time": "2024-12-11T02:47:43+00:00"
+        },
+        {
+            "name": "google/grpc-gcp",
+            "version": "v0.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GoogleCloudPlatform/grpc-gcp-php.git",
+                "reference": "e585b7721bbe806ef45b5c52ae43dfc2bff89968"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GoogleCloudPlatform/grpc-gcp-php/zipball/e585b7721bbe806ef45b5c52ae43dfc2bff89968",
+                "reference": "e585b7721bbe806ef45b5c52ae43dfc2bff89968",
+                "shasum": ""
+            },
+            "require": {
+                "google/auth": "^1.3",
+                "google/protobuf": "^v3.25.3||^4.26.1",
+                "grpc/grpc": "^v1.13.0",
+                "php": "^8.0",
+                "psr/cache": "^1.0.1||^2.0.0||^3.0.0"
+            },
+            "require-dev": {
+                "google/cloud-spanner": "^1.7",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Grpc\\Gcp\\": "src/"
+                },
+                "classmap": [
+                    "src/generated/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "gRPC GCP library for channel management",
+            "support": {
+                "issues": "https://github.com/GoogleCloudPlatform/grpc-gcp-php/issues",
+                "source": "https://github.com/GoogleCloudPlatform/grpc-gcp-php/tree/v0.4.1"
+            },
+            "time": "2025-02-19T21:53:22+00:00"
+        },
+        {
+            "name": "google/longrunning",
+            "version": "0.4.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/php-longrunning.git",
+                "reference": "624cabb874c10e5ddc9034c999f724894b70a3d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/php-longrunning/zipball/624cabb874c10e5ddc9034c999f724894b70a3d3",
+                "reference": "624cabb874c10e5ddc9034c999f724894b70a3d3",
+                "shasum": ""
+            },
+            "require-dev": {
+                "google/gax": "^1.36.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "component": {
+                    "id": "longrunning",
+                    "path": "LongRunning",
+                    "entry": null,
+                    "target": "googleapis/php-longrunning"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Google\\LongRunning\\": "src/LongRunning",
+                    "Google\\ApiCore\\LongRunning\\": "src/ApiCore/LongRunning",
+                    "GPBMetadata\\Google\\Longrunning\\": "metadata/Longrunning"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Google LongRunning Client for PHP",
+            "support": {
+                "source": "https://github.com/googleapis/php-longrunning/tree/v0.4.7"
+            },
+            "time": "2025-01-24T21:24:06+00:00"
+        },
+        {
+            "name": "google/protobuf",
+            "version": "v4.29.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/protocolbuffers/protobuf-php.git",
+                "reference": "ab5077c2cfdd1f415f42d11fdbdf903ba8e3d9b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/ab5077c2cfdd1f415f42d11fdbdf903ba8e3d9b7",
+                "reference": "ab5077c2cfdd1f415f42d11fdbdf903ba8e3d9b7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=5.0.0"
+            },
+            "suggest": {
+                "ext-bcmath": "Need to support JSON deserialization"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Google\\Protobuf\\": "src/Google/Protobuf",
+                    "GPBMetadata\\Google\\Protobuf\\": "src/GPBMetadata/Google/Protobuf"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "proto library for PHP",
+            "homepage": "https://developers.google.com/protocol-buffers/",
+            "keywords": [
+                "proto"
+            ],
+            "support": {
+                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v4.29.3"
+            },
+            "time": "2025-01-08T21:00:13+00:00"
         },
         {
             "name": "graham-campbell/bitbucket",
@@ -3454,6 +5615,50 @@
                 }
             ],
             "time": "2024-07-20T21:45:45+00:00"
+        },
+        {
+            "name": "grpc/grpc",
+            "version": "1.57.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/grpc/grpc-php.git",
+                "reference": "b610c42022ed3a22f831439cb93802f2a4502fdf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/grpc/grpc-php/zipball/b610c42022ed3a22f831439cb93802f2a4502fdf",
+                "reference": "b610c42022ed3a22f831439cb93802f2a4502fdf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "google/auth": "^v1.3.0"
+            },
+            "suggest": {
+                "ext-protobuf": "For better performance, install the protobuf C extension.",
+                "google/protobuf": "To get started using grpc quickly, install the native protobuf library."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Grpc\\": "src/lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "gRPC library for PHP",
+            "homepage": "https://grpc.io",
+            "keywords": [
+                "rpc"
+            ],
+            "support": {
+                "source": "https://github.com/grpc/grpc-php/tree/v1.57.0"
+            },
+            "time": "2023-08-14T23:57:54+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -4123,16 +6328,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v11.42.1",
+            "version": "v11.43.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "ff392f42f6c55cc774ce75553a11c6b031da67f8"
+                "reference": "99d1573698abc42222f04d25fcd5b213d0eedf21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/ff392f42f6c55cc774ce75553a11c6b031da67f8",
-                "reference": "ff392f42f6c55cc774ce75553a11c6b031da67f8",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/99d1573698abc42222f04d25fcd5b213d0eedf21",
+                "reference": "99d1573698abc42222f04d25fcd5b213d0eedf21",
                 "shasum": ""
             },
             "require": {
@@ -4334,7 +6539,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-02-12T20:58:18+00:00"
+            "time": "2025-02-19T21:53:48+00:00"
         },
         {
             "name": "laravel/helpers",
@@ -5669,6 +7874,191 @@
             "time": "2023-12-03T22:42:01+00:00"
         },
         {
+            "name": "maennchen/zipstream-php",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maennchen/ZipStream-PHP.git",
+                "reference": "3fa72e4c71a43f9e9118752a5c90e476a8dc9eb3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maennchen/ZipStream-PHP/zipball/3fa72e4c71a43f9e9118752a5c90e476a8dc9eb3",
+                "reference": "3fa72e4c71a43f9e9118752a5c90e476a8dc9eb3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "myclabs/php-enum": "^1.5",
+                "php": "^8.0",
+                "psr/http-message": "^1.0"
+            },
+            "require-dev": {
+                "ext-zip": "*",
+                "friendsofphp/php-cs-fixer": "^3.9",
+                "guzzlehttp/guzzle": "^6.5.3 || ^7.2.0",
+                "mikey179/vfsstream": "^1.6",
+                "php-coveralls/php-coveralls": "^2.4",
+                "phpunit/phpunit": "^8.5.8 || ^9.4.2",
+                "vimeo/psalm": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ZipStream\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Duncan",
+                    "email": "pabs@pablotron.org"
+                },
+                {
+                    "name": "Jonatan Männchen",
+                    "email": "jonatan@maennchen.ch"
+                },
+                {
+                    "name": "Jesse Donat",
+                    "email": "donatj@gmail.com"
+                },
+                {
+                    "name": "András Kolesár",
+                    "email": "kolesar@kolesar.hu"
+                }
+            ],
+            "description": "ZipStream is a library for dynamically streaming dynamic zip files from PHP without writing to the disk at all on the server.",
+            "keywords": [
+                "stream",
+                "zip"
+            ],
+            "support": {
+                "issues": "https://github.com/maennchen/ZipStream-PHP/issues",
+                "source": "https://github.com/maennchen/ZipStream-PHP/tree/2.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/maennchen",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/zipstream",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2022-12-08T12:29:14+00:00"
+        },
+        {
+            "name": "markbaker/complex",
+            "version": "3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MarkBaker/PHPComplex.git",
+                "reference": "95c56caa1cf5c766ad6d65b6344b807c1e8405b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MarkBaker/PHPComplex/zipball/95c56caa1cf5c766ad6d65b6344b807c1e8405b9",
+                "reference": "95c56caa1cf5c766ad6d65b6344b807c1e8405b9",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
+                "phpcompatibility/php-compatibility": "^9.3",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
+                "squizlabs/php_codesniffer": "^3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Complex\\": "classes/src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Baker",
+                    "email": "mark@lange.demon.co.uk"
+                }
+            ],
+            "description": "PHP Class for working with complex numbers",
+            "homepage": "https://github.com/MarkBaker/PHPComplex",
+            "keywords": [
+                "complex",
+                "mathematics"
+            ],
+            "support": {
+                "issues": "https://github.com/MarkBaker/PHPComplex/issues",
+                "source": "https://github.com/MarkBaker/PHPComplex/tree/3.0.2"
+            },
+            "time": "2022-12-06T16:21:08+00:00"
+        },
+        {
+            "name": "markbaker/matrix",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MarkBaker/PHPMatrix.git",
+                "reference": "728434227fe21be27ff6d86621a1b13107a2562c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MarkBaker/PHPMatrix/zipball/728434227fe21be27ff6d86621a1b13107a2562c",
+                "reference": "728434227fe21be27ff6d86621a1b13107a2562c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
+                "phpcompatibility/php-compatibility": "^9.3",
+                "phpdocumentor/phpdocumentor": "2.*",
+                "phploc/phploc": "^4.0",
+                "phpmd/phpmd": "2.*",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
+                "sebastian/phpcpd": "^4.0",
+                "squizlabs/php_codesniffer": "^3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Matrix\\": "classes/src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Baker",
+                    "email": "mark@demon-angel.eu"
+                }
+            ],
+            "description": "PHP Class for working with matrices",
+            "homepage": "https://github.com/MarkBaker/PHPMatrix",
+            "keywords": [
+                "mathematics",
+                "matrix",
+                "vector"
+            ],
+            "support": {
+                "issues": "https://github.com/MarkBaker/PHPMatrix/issues",
+                "source": "https://github.com/MarkBaker/PHPMatrix/tree/3.0.1"
+            },
+            "time": "2022-12-02T22:17:43+00:00"
+        },
+        {
             "name": "microsoft/azure-storage-blob",
             "version": "1.5.4",
             "source": {
@@ -6123,16 +8513,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "3.8.5",
+            "version": "3.8.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPHP/carbon.git",
-                "reference": "b1a53a27898639579a67de42e8ced5d5386aa9a4"
+                "reference": "ff2f20cf83bd4d503720632ce8a426dc747bf7fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/b1a53a27898639579a67de42e8ced5d5386aa9a4",
-                "reference": "b1a53a27898639579a67de42e8ced5d5386aa9a4",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/ff2f20cf83bd4d503720632ce8a426dc747bf7fd",
+                "reference": "ff2f20cf83bd4d503720632ce8a426dc747bf7fd",
                 "shasum": ""
             },
             "require": {
@@ -6225,7 +8615,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-02-11T16:28:45+00:00"
+            "time": "2025-02-20T17:33:38+00:00"
         },
         {
             "name": "nette/schema",
@@ -6521,6 +8911,62 @@
             "time": "2024-11-21T10:39:51+00:00"
         },
         {
+            "name": "onelogin/php-saml",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/onelogin/php-saml.git",
+                "reference": "b22a57ebd13e838b90df5d3346090bc37056409d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/onelogin/php-saml/zipball/b22a57ebd13e838b90df5d3346090bc37056409d",
+                "reference": "b22a57ebd13e838b90df5d3346090bc37056409d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.3",
+                "robrichards/xmlseclibs": ">=3.1.1"
+            },
+            "require-dev": {
+                "pdepend/pdepend": "^2.8.0",
+                "php-coveralls/php-coveralls": "^2.0",
+                "phploc/phploc": "^4.0 || ^5.0 || ^6.0 || ^7.0",
+                "phpunit/phpunit": "^9.5",
+                "sebastian/phpcpd": "^4.0 || ^5.0 || ^6.0 ",
+                "squizlabs/php_codesniffer": "^3.5.8"
+            },
+            "suggest": {
+                "ext-curl": "Install curl lib to be able to use the IdPMetadataParser for parsing remote XMLs",
+                "ext-dom": "Install xml lib",
+                "ext-openssl": "Install openssl lib in order to handle with x509 certs (require to support sign and encryption)",
+                "ext-zlib": "Install zlib"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OneLogin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "OneLogin PHP SAML Toolkit",
+            "homepage": "https://developers.onelogin.com/saml/php",
+            "keywords": [
+                "SAML2",
+                "onelogin",
+                "saml"
+            ],
+            "support": {
+                "email": "sixto.garcia@onelogin.com",
+                "issues": "https://github.com/onelogin/php-saml/issues",
+                "source": "https://github.com/onelogin/php-saml/"
+            },
+            "time": "2022-07-15T20:44:36+00:00"
+        },
+        {
             "name": "paragonie/constant_time_encoding",
             "version": "v3.0.0",
             "source": {
@@ -6639,16 +9085,16 @@
         },
         {
             "name": "php-amqplib/php-amqplib",
-            "version": "v3.7.2",
+            "version": "v3.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-amqplib/php-amqplib.git",
-                "reference": "738a73eb0019b6c99d9bc25d7a0c0dd8f56a5199"
+                "reference": "9f50fe69a9f1a19e2cb25596a354d705de36fe59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-amqplib/php-amqplib/zipball/738a73eb0019b6c99d9bc25d7a0c0dd8f56a5199",
-                "reference": "738a73eb0019b6c99d9bc25d7a0c0dd8f56a5199",
+                "url": "https://api.github.com/repos/php-amqplib/php-amqplib/zipball/9f50fe69a9f1a19e2cb25596a354d705de36fe59",
+                "reference": "9f50fe69a9f1a19e2cb25596a354d705de36fe59",
                 "shasum": ""
             },
             "require": {
@@ -6714,9 +9160,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-amqplib/php-amqplib/issues",
-                "source": "https://github.com/php-amqplib/php-amqplib/tree/v3.7.2"
+                "source": "https://github.com/php-amqplib/php-amqplib/tree/v3.7.3"
             },
-            "time": "2024-11-21T09:21:41+00:00"
+            "time": "2025-02-18T20:11:13+00:00"
         },
         {
             "name": "php-http/cache-plugin",
@@ -7472,6 +9918,111 @@
             "time": "2025-01-07T07:11:23+00:00"
         },
         {
+            "name": "phpoffice/phpspreadsheet",
+            "version": "1.25.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPOffice/PhpSpreadsheet.git",
+                "reference": "a317a09e7def49852400a4b3eca4a4b0790ceeb5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/a317a09e7def49852400a4b3eca4a4b0790ceeb5",
+                "reference": "a317a09e7def49852400a4b3eca4a4b0790ceeb5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-dom": "*",
+                "ext-fileinfo": "*",
+                "ext-gd": "*",
+                "ext-iconv": "*",
+                "ext-libxml": "*",
+                "ext-mbstring": "*",
+                "ext-simplexml": "*",
+                "ext-xml": "*",
+                "ext-xmlreader": "*",
+                "ext-xmlwriter": "*",
+                "ext-zip": "*",
+                "ext-zlib": "*",
+                "ezyang/htmlpurifier": "^4.15",
+                "maennchen/zipstream-php": "^2.1",
+                "markbaker/complex": "^3.0",
+                "markbaker/matrix": "^3.0",
+                "php": "^7.3 || ^8.0",
+                "psr/http-client": "^1.0",
+                "psr/http-factory": "^1.0",
+                "psr/simple-cache": "^1.0 || ^2.0 || ^3.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
+                "dompdf/dompdf": "^1.0 || ^2.0",
+                "friendsofphp/php-cs-fixer": "^3.2",
+                "mitoteam/jpgraph": "10.2.4",
+                "mpdf/mpdf": "8.1.1",
+                "phpcompatibility/php-compatibility": "^9.3",
+                "phpstan/phpstan": "^1.1",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^8.5 || ^9.0",
+                "squizlabs/php_codesniffer": "^3.7",
+                "tecnickcom/tcpdf": "6.5"
+            },
+            "suggest": {
+                "dompdf/dompdf": "Option for rendering PDF with PDF Writer",
+                "ext-intl": "PHP Internationalization Functions",
+                "mitoteam/jpgraph": "Option for rendering charts, or including charts with PDF or HTML Writers",
+                "mpdf/mpdf": "Option for rendering PDF with PDF Writer",
+                "tecnickcom/tcpdf": "Option for rendering PDF with PDF Writer"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpOffice\\PhpSpreadsheet\\": "src/PhpSpreadsheet"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maarten Balliauw",
+                    "homepage": "https://blog.maartenballiauw.be"
+                },
+                {
+                    "name": "Mark Baker",
+                    "homepage": "https://markbakeruk.net"
+                },
+                {
+                    "name": "Franck Lefevre",
+                    "homepage": "https://rootslabs.net"
+                },
+                {
+                    "name": "Erik Tilt"
+                },
+                {
+                    "name": "Adrien Crivelli"
+                }
+            ],
+            "description": "PHPSpreadsheet - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
+            "homepage": "https://github.com/PHPOffice/PhpSpreadsheet",
+            "keywords": [
+                "OpenXML",
+                "excel",
+                "gnumeric",
+                "ods",
+                "php",
+                "spreadsheet",
+                "xls",
+                "xlsx"
+            ],
+            "support": {
+                "issues": "https://github.com/PHPOffice/PhpSpreadsheet/issues",
+                "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/1.25.2"
+            },
+            "time": "2022-09-25T17:21:01+00:00"
+        },
+        {
             "name": "phpoption/phpoption",
             "version": "1.9.3",
             "source": {
@@ -8097,16 +10648,16 @@
         },
         {
             "name": "psr/http-message",
-            "version": "2.0",
+            "version": "1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-message.git",
-                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71"
+                "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-message/zipball/402d35bcb92c70c026d1a6a9883f06b2ead23d71",
-                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
+                "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
                 "shasum": ""
             },
             "require": {
@@ -8115,7 +10666,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -8130,7 +10681,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "https://www.php-fig.org/"
+                    "homepage": "http://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for HTTP messages",
@@ -8144,9 +10695,9 @@
                 "response"
             ],
             "support": {
-                "source": "https://github.com/php-fig/http-message/tree/2.0"
+                "source": "https://github.com/php-fig/http-message/tree/1.1"
             },
-            "time": "2023-04-04T09:54:51+00:00"
+            "time": "2023-04-04T09:50:52+00:00"
         },
         {
             "name": "psr/log",
@@ -8552,6 +11103,112 @@
                 }
             ],
             "time": "2024-04-27T21:32:50+00:00"
+        },
+        {
+            "name": "rize/uri-template",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rize/UriTemplate.git",
+                "reference": "56f374a9a42c7c3998f8b55b6b21b224de90c58b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rize/UriTemplate/zipball/56f374a9a42c7c3998f8b55b6b21b224de90c58b",
+                "reference": "56f374a9a42c7c3998f8b55b6b21b224de90c58b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.63",
+                "phpstan/phpstan": "^1.12",
+                "phpunit/phpunit": "~10.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rize\\": "src/Rize"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marut K",
+                    "homepage": "http://twitter.com/rezigned"
+                }
+            ],
+            "description": "PHP URI Template (RFC 6570) supports both expansion & extraction",
+            "keywords": [
+                "RFC 6570",
+                "template",
+                "uri"
+            ],
+            "support": {
+                "issues": "https://github.com/rize/UriTemplate/issues",
+                "source": "https://github.com/rize/UriTemplate/tree/0.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/rezigned",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/rezigned",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/rize-uri-template",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2024-11-27T12:13:42+00:00"
+        },
+        {
+            "name": "robrichards/xmlseclibs",
+            "version": "3.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/robrichards/xmlseclibs.git",
+                "reference": "2bdfd742624d739dfadbd415f00181b4a77aaf07"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/robrichards/xmlseclibs/zipball/2bdfd742624d739dfadbd415f00181b4a77aaf07",
+                "reference": "2bdfd742624d739dfadbd415f00181b4a77aaf07",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "php": ">= 5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RobRichards\\XMLSecLibs\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "A PHP library for XML Security",
+            "homepage": "https://github.com/robrichards/xmlseclibs",
+            "keywords": [
+                "security",
+                "signature",
+                "xml",
+                "xmldsig"
+            ],
+            "support": {
+                "issues": "https://github.com/robrichards/xmlseclibs/issues",
+                "source": "https://github.com/robrichards/xmlseclibs/tree/3.1.3"
+            },
+            "time": "2024-11-20T21:13:56+00:00"
         },
         {
             "name": "sabre/dav",
@@ -9114,6 +11771,47 @@
             "time": "2020-12-01T23:10:59+00:00"
         },
         {
+            "name": "socialiteproviders/salesforce",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/SalesForce.git",
+                "reference": "1fb0583a806d1cc00c33ef1874417bb91bf0b453"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SocialiteProviders/SalesForce/zipball/1fb0583a806d1cc00c33ef1874417bb91bf0b453",
+                "reference": "1fb0583a806d1cc00c33ef1874417bb91bf0b453",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.2 || ^8.0",
+                "socialiteproviders/manager": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\SalesForce\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andy Wendt",
+                    "email": "andy@awendt.com"
+                }
+            ],
+            "description": "SalesForce OAuth2 Provider for Laravel Socialite",
+            "support": {
+                "source": "https://github.com/SocialiteProviders/SalesForce/tree/4.1.0"
+            },
+            "time": "2020-12-01T23:10:59+00:00"
+        },
+        {
             "name": "socialiteproviders/twitter",
             "version": "4.1.2",
             "source": {
@@ -9165,26 +11863,26 @@
         },
         {
             "name": "spatie/laravel-http-logger",
-            "version": "1.11.0",
+            "version": "1.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-http-logger.git",
-                "reference": "96c18c32999e2e4142e157a71f51d467da29fa98"
+                "reference": "5b475b2145ab327974162754f37001f228a3116e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-http-logger/zipball/96c18c32999e2e4142e157a71f51d467da29fa98",
-                "reference": "96c18c32999e2e4142e157a71f51d467da29fa98",
+                "url": "https://api.github.com/repos/spatie/laravel-http-logger/zipball/5b475b2145ab327974162754f37001f228a3116e",
+                "reference": "5b475b2145ab327974162754f37001f228a3116e",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0",
                 "php": "^7.4|^8.0"
             },
             "require-dev": {
-                "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0",
-                "pestphp/pest": "^1.22|^2.34",
-                "phpunit/phpunit": "^9.0|^10.5"
+                "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "pestphp/pest": "^1.22|^2.34|^3.7",
+                "phpunit/phpunit": "^9.0|^10.5|^11.5.3"
             },
             "type": "library",
             "extra": {
@@ -9219,7 +11917,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-http-logger/issues",
-                "source": "https://github.com/spatie/laravel-http-logger/tree/1.11.0"
+                "source": "https://github.com/spatie/laravel-http-logger/tree/1.11.1"
             },
             "funding": [
                 {
@@ -9227,7 +11925,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-03-02T05:42:55+00:00"
+            "time": "2025-02-17T10:33:39+00:00"
         },
         {
             "name": "symfony/cache",
@@ -12590,6 +15288,157 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
+        },
+        {
+            "name": "yajra/laravel-oci8",
+            "version": "v11.6.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yajra/laravel-oci8.git",
+                "reference": "4f5c5432fbe24521c85e7d36e0e5f6799a4a99a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yajra/laravel-oci8/zipball/4f5c5432fbe24521c85e7d36e0e5f6799a4a99a2",
+                "reference": "4f5c5432fbe24521c85e7d36e0e5f6799a4a99a2",
+                "shasum": ""
+            },
+            "require": {
+                "ext-oci8": ">=3.0.1",
+                "ext-pdo": "*",
+                "illuminate/database": "^11.15.0",
+                "illuminate/pagination": "^11.15.0",
+                "illuminate/support": "^11.15.0",
+                "illuminate/validation": "^11.15.0",
+                "php": "^8.2",
+                "yajra/laravel-pdo-via-oci8": "^3.4.4"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.6.12",
+                "orchestra/testbench": "^9.1.2",
+                "phpunit/phpunit": "^10.5|^11.2.7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Yajra\\Oci8\\Oci8ServiceProvider",
+                        "Yajra\\Oci8\\Oci8ValidationServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-master": "11.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helper.php"
+                ],
+                "psr-4": {
+                    "Yajra\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arjay Angeles",
+                    "email": "aqangeles@gmail.com"
+                }
+            ],
+            "description": "Oracle DB driver for Laravel via OCI8",
+            "keywords": [
+                "laravel",
+                "oci8",
+                "oracle",
+                "pdo_oci",
+                "yajra"
+            ],
+            "support": {
+                "issues": "https://github.com/yajra/laravel-oci8/issues",
+                "source": "https://github.com/yajra/laravel-oci8/tree/v11.6.4"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/yajra",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/yajra",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/yajra",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2024-12-31T06:59:31+00:00"
+        },
+        {
+            "name": "yajra/laravel-pdo-via-oci8",
+            "version": "v3.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yajra/pdo-via-oci8.git",
+                "reference": "cd8f8b8130f60d088d06b3798602625093b69a72"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yajra/pdo-via-oci8/zipball/cd8f8b8130f60d088d06b3798602625093b69a72",
+                "reference": "cd8f8b8130f60d088d06b3798602625093b69a72",
+                "shasum": ""
+            },
+            "require": {
+                "ext-oci8": "*",
+                "ext-pdo": "*",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.4|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yajra\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arjay Angeles",
+                    "email": "aqangeles@gmail.com"
+                }
+            ],
+            "description": "PDO userspace driver proxying calls to PHP OCI8 driver",
+            "support": {
+                "issues": "https://github.com/yajra/pdo-via-oci8/issues",
+                "source": "https://github.com/yajra/pdo-via-oci8/tree/v3.7.1"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/yajra",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/yajra",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/yajra",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2025-01-20T14:25:26+00:00"
         }
     ],
     "packages-dev": [
@@ -14878,103 +17727,17 @@
             "time": "2024-03-03T12:36:25+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "dreamfactory/df-admin-interface",
-            "version": "dev-develop",
-            "alias": "1.4.0",
-            "alias_normalized": "1.4.0.0"
-        },
-        {
-            "package": "dreamfactory/df-aws",
-            "version": "dev-develop",
-            "alias": "0.19.0",
-            "alias_normalized": "0.19.0.0"
-        },
-        {
-            "package": "dreamfactory/df-azure",
-            "version": "dev-develop",
-            "alias": "0.18.0",
-            "alias_normalized": "0.18.0.0"
-        },
-        {
-            "package": "dreamfactory/df-cassandra",
-            "version": "dev-develop",
-            "alias": "0.15.0",
-            "alias_normalized": "0.15.0.0"
-        },
-        {
-            "package": "dreamfactory/df-core",
-            "version": "dev-develop",
-            "alias": "1.0.4",
-            "alias_normalized": "1.0.4.0"
-        },
-        {
-            "package": "dreamfactory/df-couchdb",
-            "version": "dev-develop",
-            "alias": "0.18.0",
-            "alias_normalized": "0.18.0.0"
-        },
-        {
-            "package": "dreamfactory/df-email",
-            "version": "dev-develop",
-            "alias": "0.13.0",
-            "alias_normalized": "0.13.0.0"
-        },
-        {
-            "package": "dreamfactory/df-file",
-            "version": "dev-develop",
-            "alias": "0.8.1",
-            "alias_normalized": "0.8.1.0"
-        },
-        {
-            "package": "dreamfactory/df-firebird",
-            "version": "dev-develop",
-            "alias": "0.10.0",
-            "alias_normalized": "0.10.0.0"
-        },
-        {
-            "package": "dreamfactory/df-git",
-            "version": "dev-develop",
-            "alias": "0.8.0",
-            "alias_normalized": "0.8.0.0"
-        },
-        {
-            "package": "dreamfactory/df-mongo-logs",
-            "version": "dev-develop",
-            "alias": "1.3.0",
-            "alias_normalized": "1.3.0.0"
-        },
-        {
-            "package": "dreamfactory/df-sqldb",
-            "version": "dev-develop",
-            "alias": "1.2.0",
-            "alias_normalized": "1.2.0.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "dreamfactory/df-admin-interface": 20,
-        "dreamfactory/df-aws": 20,
-        "dreamfactory/df-azure": 20,
-        "dreamfactory/df-cassandra": 20,
-        "dreamfactory/df-core": 20,
-        "dreamfactory/df-couchdb": 20,
-        "dreamfactory/df-email": 20,
-        "dreamfactory/df-file": 20,
-        "dreamfactory/df-firebird": 20,
-        "dreamfactory/df-git": 20,
-        "dreamfactory/df-mongo-logs": 20,
-        "dreamfactory/df-sqldb": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.3"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "platform-overrides": {
         "php": "8.3"
     },
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.6.0"
 }

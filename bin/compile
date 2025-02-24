@@ -20,27 +20,16 @@ fi
 
 echo "-----> Cloning DreamFactory source code"
 git clone -b develop https://github.com/dreamfactorysoftware/dreamfactory.git $BUILD_DIR/dreamfactory
-#git clone https://github.com/dreamfactorysoftware/dreamfactory.git $BUILD_DIR/dreamfactory
-
-echo "-----> Listing contents of $BUILD_DIR/dreamfactory"
-ls -la $BUILD_DIR/dreamfactory
-
-echo "-----> Checking if database/seeds exists"
-ls -la $BUILD_DIR/database
-ls -la $BUILD_DIR/database/seeds || echo "X database/seeds/ is missing!"
 
 echo "-----> Moving DreamFactory into the Build Directory"
-mv $BUILD_DIR/dreamfactory/* $BUILD_DIR
-
-echo "-----> Final directory structure:"
-ls -la $BUILD_DIR
-
-cd $BUILD_DIR
+cp -R $BUILD_DIR/dreamfactory/. $BUILD_DIR/
+rm -rf $BUILD_DIR/dreamfactory
 
 echo "-----> Installing Composer"
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 echo "-----> Running Composer Install"
+cd $BUILD_DIR
 composer install --no-dev --ignore-platform-reqs --optimize-autoloader
 
 echo "-----> Running database migrations"
