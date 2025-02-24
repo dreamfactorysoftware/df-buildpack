@@ -33,6 +33,12 @@ echo "-----> Moving DreamFactory into the Build Directory"
 cp -R $BUILD_DIR/dreamfactory/. $BUILD_DIR/
 rm -rf $BUILD_DIR/dreamfactory
 
+# Create SQLite database directory and file
+echo "-----> Setting up SQLite database"
+mkdir -p $BUILD_DIR/database
+touch $BUILD_DIR/database/database.sqlite
+chmod 775 $BUILD_DIR/database/database.sqlite
+
 # Create required directories (following Dockerfile structure)
 echo "-----> Creating required directories"
 mkdir -p $BUILD_DIR/storage/app
@@ -44,9 +50,11 @@ mkdir -p $BUILD_DIR/bootstrap/cache
 chmod -R 775 $BUILD_DIR/storage
 chmod -R 775 $BUILD_DIR/bootstrap/cache
 
-# Copy .env-dist to .env (DreamFactory uses .env-dist)
+# Copy .env-dist to .env and update SQLite path
 echo "-----> Setting up environment file"
 cp $BUILD_DIR/.env-dist $BUILD_DIR/.env
+echo "DB_CONNECTION=sqlite" >> $BUILD_DIR/.env
+echo "DB_DATABASE=/app/database/database.sqlite" >> $BUILD_DIR/.env
 
 # Create a profile.d script that will run after all buildpacks
 mkdir -p $BUILD_DIR/.profile.d
@@ -55,7 +63,7 @@ cat > $BUILD_DIR/.profile.d/dreamfactory.sh <<'EOF'
 
 cd $HOME
 
-# Clear composer cache and install packages (following Dockerfile)
+# Clear composer cache and install packages
 composer clear-cache
 COMPOSER_MEMORY_LIMIT=-1 composer install --no-dev --ignore-platform-reqs --no-scripts
 COMPOSER_MEMORY_LIMIT=-1 composer install --no-dev --ignore-platform-reqs
@@ -63,13 +71,14 @@ COMPOSER_MEMORY_LIMIT=-1 composer install --no-dev --ignore-platform-reqs
 # Generate application key
 php artisan key:generate --force
 
-# Run DreamFactory environment setup (using Cloud instead of Docker)
+# Run DreamFactory environment setup
 php artisan df:env --db_connection=sqlite --df_install=Cloud
 
 # Run storage link
 php artisan storage:link
 
-# Run migrations
+# Run setup and migrations
+# php artisan df:setup --no-app-key --force
 php artisan migrate --force
 EOF
 
