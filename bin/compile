@@ -1,13 +1,24 @@
 #!/bin/sh
 set -e
 
+BUILD_DIR=$1  # First argument is the build directory
+CACHE_DIR=$2  # Second argument is the cache directory
+ENV_DIR=$3    # Third argument is the env directory
+
 echo "-----> Running DreamFactory Buildpack"
 
-# Check if BUILD_DIR is defined
+# Check if BUILD_DIR is defined and exists
 if [ -z "$BUILD_DIR" ]; then
-    echo "X ERROR: BUILD_DIR is not set!"
+    echo "X ERROR: BUILD_DIR argument is not provided!"
     exit 1
 fi
+
+if [ ! -d "$BUILD_DIR" ]; then
+    echo "X ERROR: BUILD_DIR ($BUILD_DIR) is not a directory!"
+    exit 1
+fi
+
+echo "-----> Using BUILD_DIR: $BUILD_DIR"
 
 # Install Git if missing
 if ! command -v git >/dev/null 2>&1; then
