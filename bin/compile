@@ -61,18 +61,20 @@ APP_DEBUG=true
 LOG_LEVEL=debug
 EOF
 
+# Ensure PHP extensions are enabled
+echo "-----> Configuring PHP extensions"
+mkdir -p $BUILD_DIR/.heroku/php
+cat > $BUILD_DIR/.heroku/php/platform.ini <<'EOF'
+extension=pdo_sqlite.so
+extension=sqlite3.so
+EOF
+
 # Create a profile.d script that will run after all buildpacks
 mkdir -p $BUILD_DIR/.profile.d
 cat > $BUILD_DIR/.profile.d/dreamfactory.sh <<'EOF'
 #!/bin/sh
 
 cd $HOME
-
-# Ensure SQLite extension is loaded
-php -m | grep -i sqlite || {
-    echo "SQLite extension not found. Installing..."
-    apt-get update && apt-get install -y php-sqlite3
-}
 
 # Clear composer cache and install packages
 composer clear-cache
@@ -96,8 +98,15 @@ chmod +x $BUILD_DIR/.profile.d/dreamfactory.sh
 
 # Create Procfile if it doesn't exist
 if [ ! -f "$BUILD_DIR/Procfile" ]; then
-    echo "web: vendor/bin/heroku-php-apache2 public/" > "$BUILD_DIR/Procfile"
+    echo "web: vendor/bin/heroku-php-apache2 -F fpm_custom.conf public/" > "$BUILD_DIR/Procfile"
 fi
+
+# Create custom PHP-FPM config
+mkdir -p $BUILD_DIR/config
+cat > $BUILD_DIR/fpm_custom.conf <<'EOF'
+extension=pdo_sqlite.so
+extension=sqlite3.so
+EOF
 
 echo "-----> DreamFactory buildpack complete. Handing off to PHP buildpack..."
 
