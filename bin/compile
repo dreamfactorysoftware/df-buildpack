@@ -33,32 +33,37 @@ echo "-----> Moving DreamFactory into the Build Directory"
 cp -R $BUILD_DIR/dreamfactory/. $BUILD_DIR/
 rm -rf $BUILD_DIR/dreamfactory
 
-# Create required directories
+# Create required directories (following Dockerfile structure)
 echo "-----> Creating required directories"
-mkdir -p $BUILD_DIR/database/seeds
-mkdir -p $BUILD_DIR/database/factories
+mkdir -p $BUILD_DIR/storage/app
+mkdir -p $BUILD_DIR/storage/framework/cache
+mkdir -p $BUILD_DIR/storage/framework/sessions
+mkdir -p $BUILD_DIR/storage/framework/views
 mkdir -p $BUILD_DIR/storage/logs
-mkdir -p $BUILD_DIR/storage/app/public
-mkdir -p $BUILD_DIR/storage/framework/{cache,sessions,views}
+mkdir -p $BUILD_DIR/bootstrap/cache
 chmod -R 775 $BUILD_DIR/storage
+chmod -R 775 $BUILD_DIR/bootstrap/cache
 
-# Create .env file
-echo "-----> Generating .env file"
-cd $BUILD_DIR
-php -r "copy('.env.example', '.env');"
-
-# Let PHP buildpack handle composer installation
-echo "-----> Waiting for Composer installation from PHP buildpack..."
+# Copy .env-dist to .env (DreamFactory uses .env-dist)
+echo "-----> Setting up environment file"
+cp $BUILD_DIR/.env-dist $BUILD_DIR/.env
 
 # Create a profile.d script that will run after all buildpacks
 mkdir -p $BUILD_DIR/.profile.d
 cat > $BUILD_DIR/.profile.d/dreamfactory.sh <<'EOF'
 #!/bin/sh
 
+cd $HOME
+
+# Clear composer cache and install packages (following Dockerfile)
+composer clear-cache
+COMPOSER_MEMORY_LIMIT=-1 composer install --no-dev --ignore-platform-reqs --no-scripts
+COMPOSER_MEMORY_LIMIT=-1 composer install --no-dev --ignore-platform-reqs
+
 # Generate application key
 php artisan key:generate --force
 
-# Run DreamFactory environment setup
+# Run DreamFactory environment setup (using Cloud instead of Docker)
 php artisan df:env --db_connection=sqlite --df_install=Cloud
 
 # Run storage link
