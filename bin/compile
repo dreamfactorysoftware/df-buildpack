@@ -28,8 +28,19 @@ rm -rf $BUILD_DIR/dreamfactory
 echo "-----> Installing Composer"
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-echo "-----> Running Composer Install"
+echo "-----> Modifying composer.json for Heroku compatibility"
 cd $BUILD_DIR
+# Remove packages that require unavailable extensions
+composer remove --no-update \
+    dreamfactory/df-hadoop \
+    yajra/laravel-oci8 \
+    yajra/laravel-pdo-via-oci8
+
+# Add platform config to ignore missing extensions
+composer config platform.ext-odbc false
+composer config platform.ext-oci8 false
+
+echo "-----> Running Composer Install"
 composer install --no-dev --ignore-platform-reqs --optimize-autoloader
 
 echo "-----> Running database migrations"
