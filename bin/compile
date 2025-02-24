@@ -20,6 +20,11 @@ fi
 
 echo "-----> Using BUILD_DIR: $BUILD_DIR"
 
+# Install system dependencies
+echo "-----> Installing system dependencies"
+apt-get update
+apt-get install -y git php php-cli php-curl php-mbstring php-xml unzip
+
 # Install Git if missing
 if ! command -v git >/dev/null 2>&1; then
     echo "X Git is missing! Installing now..."
