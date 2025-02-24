@@ -21,9 +21,21 @@ fi
 echo "-----> Cloning DreamFactory source code"
 git clone -b develop https://github.com/dreamfactorysoftware/dreamfactory.git $BUILD_DIR/dreamfactory
 
+# Debug: Check if clone was successful and show directory structure
+echo "-----> Checking cloned repository contents"
+ls -la $BUILD_DIR/dreamfactory
+ls -la $BUILD_DIR/dreamfactory/database || echo "X database directory missing!"
+ls -la $BUILD_DIR/dreamfactory/database/seeds || echo "X seeds directory missing!"
+
 echo "-----> Moving DreamFactory into the Build Directory"
 cp -R $BUILD_DIR/dreamfactory/. $BUILD_DIR/
 rm -rf $BUILD_DIR/dreamfactory
+
+# Debug: Check if files were copied correctly
+echo "-----> Checking build directory contents after copy"
+ls -la $BUILD_DIR
+ls -la $BUILD_DIR/database || echo "X database directory missing after copy!"
+ls -la $BUILD_DIR/database/seeds || echo "X seeds directory missing after copy!"
 
 echo "-----> Installing Composer"
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
