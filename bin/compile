@@ -30,15 +30,29 @@ curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
 
 echo "-----> Modifying composer.json for Heroku compatibility"
 cd $BUILD_DIR
-# Remove packages that require unavailable extensions
-composer remove --no-update \
-    dreamfactory/df-hadoop \
-    yajra/laravel-oci8 \
-    yajra/laravel-pdo-via-oci8
 
-# Add platform config to ignore missing extensions
-composer config platform.ext-odbc false
-composer config platform.ext-oci8 false
+# Create a temporary file with jq modifications
+cat > modify_composer.php <<'EOF'
+<?php
+$composerJson = json_decode(file_get_contents('composer.json'), true);
+
+// Remove problematic packages
+unset($composerJson['require']['dreamfactory/df-hadoop']);
+unset($composerJson['require']['yajra/laravel-oci8']);
+unset($composerJson['require']['yajra/laravel-pdo-via-oci8']);
+
+// Add platform overrides
+if (!isset($composerJson['config']['platform'])) {
+    $composerJson['config']['platform'] = [];
+}
+$composerJson['config']['platform']['ext-odbc'] = false;
+$composerJson['config']['platform']['ext-oci8'] = false;
+
+file_put_contents('composer.json', json_encode($composerJson, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+EOF
+
+# Run the PHP script to modify composer.json
+php modify_composer.php
 
 echo "-----> Running Composer Install"
 composer install --no-dev --ignore-platform-reqs --optimize-autoloader
